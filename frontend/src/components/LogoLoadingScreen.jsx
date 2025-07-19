@@ -208,59 +208,36 @@ const LogoLoadingScreen = ({ onComplete }) => {
           transform: translate3d(0, 0, 0);
         }
         
-        @keyframes pixelDigitalization {
+        @keyframes professionalReveal {
           0% { 
             opacity: 0;
-            transform: scale(1);
-            filter: blur(0px);
-            background: linear-gradient(90deg, transparent 0%, transparent 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
+            transform: scale(0.8) translateY(20px);
+            filter: blur(4px);
             text-shadow: none;
           }
-          10% {
-            opacity: 1;
-            background: linear-gradient(90deg, #38220f 0%, #38220f 5%, transparent 5%, transparent 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 0 0 2px rgba(150, 114, 89, 0.3);
+          20% {
+            opacity: 0.3;
+            transform: scale(0.85) translateY(15px);
+            filter: blur(3px);
+            text-shadow: 0 0 8px rgba(150, 114, 89, 0.3);
           }
-          25% {
-            background: linear-gradient(90deg, #38220f 0%, #38220f 20%, transparent 20%, transparent 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 0 0 4px rgba(150, 114, 89, 0.4);
+          50% {
+            opacity: 0.7;
+            transform: scale(0.95) translateY(5px);
+            filter: blur(1px);
+            text-shadow: 0 0 12px rgba(150, 114, 89, 0.5);
           }
-          40% {
-            background: linear-gradient(90deg, #38220f 0%, #38220f 35%, transparent 35%, transparent 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 0 0 6px rgba(150, 114, 89, 0.5);
-          }
-          55% {
-            background: linear-gradient(90deg, #38220f 0%, #38220f 55%, transparent 55%, transparent 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 0 0 8px rgba(150, 114, 89, 0.6);
-          }
-          70% {
-            background: linear-gradient(90deg, #38220f 0%, #38220f 75%, transparent 75%, transparent 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 0 0 10px rgba(150, 114, 89, 0.7);
-          }
-          85% {
-            background: linear-gradient(90deg, #38220f 0%, #38220f 90%, transparent 90%, transparent 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 0 0 12px rgba(150, 114, 89, 0.8);
+          80% {
+            opacity: 0.95;
+            transform: scale(1.02) translateY(-2px);
+            filter: blur(0px);
+            text-shadow: 0 0 15px rgba(150, 114, 89, 0.6);
           }
           100% { 
             opacity: 1;
-            transform: scale(1);
-            color: #38220f;
-            background: none;
-            text-shadow: 0 0 15px rgba(150, 114, 89, 0.4);
+            transform: scale(1) translateY(0px);
+            filter: blur(0px);
+            text-shadow: 0 0 12px rgba(150, 114, 89, 0.4);
           }
         }
         
