@@ -199,6 +199,9 @@ const LogoLoadingScreen = ({ onComplete }) => {
           background: #967259;
           border-radius: 1px;
           opacity: 0;
+          will-change: transform, opacity;
+          backface-visibility: hidden;
+          transform: translate3d(0, 0, 0);
         }
         
         @keyframes coolLogoEntrance {
