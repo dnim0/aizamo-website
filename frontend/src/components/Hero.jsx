@@ -211,7 +211,7 @@ const Hero = () => {
           {/* Enhanced Main Heading with New Slogan */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 enhanced-fade-in-up">
             <div className="flex flex-col items-center">
-              <span style={{ color: 'var(--darkest-brown)' }}>Automate the Ordinary</span>
+              <span style={{ color: 'var(--medium-brown)' }}>Automate the Ordinary</span>
               
               {/* Stylish Dividing Line */}
               <div className="flex items-center my-4 w-full max-w-md">
@@ -231,7 +231,7 @@ const Hero = () => {
                 ></div>
               </div>
               
-              <span style={{ color: 'var(--medium-brown)' }}>Scale the Extraordinary</span>
+              <span style={{ color: 'var(--darkest-brown)' }}>Scale the Extraordinary</span>
             </div>
           </h1>
 
