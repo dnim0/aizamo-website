@@ -49,11 +49,11 @@ const Navigation = () => {
 
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - Concept 1: Gradient Typography */}
+          {/* Logo - Concept 1: Gradient Typography with Left-to-Right Highlight */}
           <div className="flex-shrink-0 group">
             <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
               <h2 
-                className="text-3xl font-bold transition-all duration-300 hover:opacity-80 relative"
+                className="text-3xl font-bold transition-all duration-500 hover:opacity-90 relative overflow-hidden"
                 style={{ 
                   background: 'linear-gradient(135deg, #967259 0%, #634832 50%, #38220f 100%)',
                   WebkitBackgroundClip: 'text',
@@ -62,12 +62,28 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
+                {/* Left-to-Right Sweep Underline */}
                 <div 
-                  className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-current to-transparent transition-all duration-700 ease-out transform origin-left scale-x-0 group-hover:scale-x-100"
                   style={{ 
-                    background: 'linear-gradient(90deg, transparent, #967259, transparent)' 
+                    background: 'linear-gradient(90deg, transparent 10%, #967259 30%, #634832 70%, transparent 90%)',
+                    width: '100%'
                   }}
                 ></div>
+                
+                {/* Additional glow effect on hover */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ 
+                    background: 'linear-gradient(135deg, #967259 0%, #634832 50%, #38220f 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(0 0 8px rgba(150, 114, 89, 0.4))'
+                  }}
+                >
+                  AIzamo
+                </div>
               </h2>
             </div>
           </div>
