@@ -242,7 +242,7 @@ const Hero = () => {
           >
             <p className="typewriter-container">
               {typewriterText}
-              <span className="typewriter-cursor">|</span>
+              {!typewriterComplete && <span className="typewriter-cursor">|</span>}
             </p>
           </div>
 
