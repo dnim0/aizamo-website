@@ -208,30 +208,63 @@ const LogoLoadingScreen = ({ onComplete }) => {
           transform: translate3d(0, 0, 0);
         }
         
-        @keyframes coolLogoEntrance {
+        @keyframes techLogoConstruction {
           0% { 
             opacity: 0; 
-            transform: scale(0.3) translateY(30px) rotateX(90deg); 
-            filter: blur(8px) brightness(0.5);
+            transform: scale(0.1);
+            filter: blur(10px) brightness(0.3);
             text-shadow: 0 0 0px rgba(150, 114, 89, 0);
+            letter-spacing: 20px;
           }
-          30% {
+          15% {
+            opacity: 0.3;
+            transform: scale(0.4);
+            filter: blur(6px) brightness(0.6);
+            text-shadow: 
+              0 0 5px rgba(150, 114, 89, 0.3),
+              0 0 10px rgba(150, 114, 89, 0.2);
+            letter-spacing: 15px;
+          }
+          35% {
+            opacity: 0.6;
+            transform: scale(0.7);
+            filter: blur(3px) brightness(0.8);
+            text-shadow: 
+              0 0 8px rgba(150, 114, 89, 0.5),
+              0 0 15px rgba(150, 114, 89, 0.3),
+              0 0 25px rgba(150, 114, 89, 0.2);
+            letter-spacing: 8px;
+          }
+          60% {
             opacity: 0.8;
-            transform: scale(1.1) translateY(-10px) rotateX(15deg);
-            filter: blur(2px) brightness(1.3);
-            text-shadow: 0 0 15px rgba(150, 114, 89, 0.6);
+            transform: scale(0.9);
+            filter: blur(1px) brightness(1.2);
+            text-shadow: 
+              0 0 12px rgba(150, 114, 89, 0.7),
+              0 0 20px rgba(150, 114, 89, 0.4),
+              0 0 35px rgba(150, 114, 89, 0.2),
+              inset 0 0 10px rgba(255, 255, 255, 0.1);
+            letter-spacing: 3px;
           }
-          70% {
-            opacity: 1;
-            transform: scale(0.95) translateY(5px) rotateX(-5deg);
-            filter: blur(0px) brightness(1.1);
-            text-shadow: 0 0 25px rgba(150, 114, 89, 0.8);
+          85% {
+            opacity: 0.95;
+            transform: scale(1.05);
+            filter: blur(0px) brightness(1.3);
+            text-shadow: 
+              0 0 15px rgba(150, 114, 89, 0.8),
+              0 0 25px rgba(150, 114, 89, 0.5),
+              0 0 40px rgba(150, 114, 89, 0.3),
+              0 0 2px rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
           }
           100% { 
             opacity: 1; 
-            transform: scale(1) translateY(0px) rotateX(0deg); 
+            transform: scale(1);
             filter: blur(0px) brightness(1);
-            text-shadow: 0 0 20px rgba(150, 114, 89, 0.4);
+            text-shadow: 
+              0 0 20px rgba(150, 114, 89, 0.4),
+              0 0 1px rgba(255, 255, 255, 0.2);
+            letter-spacing: normal;
           }
         }
         
