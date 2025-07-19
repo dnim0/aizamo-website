@@ -253,9 +253,9 @@ const Hero = () => {
           >
             <button
               onClick={scrollToContact}
-              className="btn btn-primary text-lg px-8 py-4 flex items-center group enhanced-hover"
+              className="btn btn-primary text-lg px-8 py-4 flex items-center justify-center group enhanced-hover"
             >
-              Get Started Today
+              <span>Get Started Today</span>
               <ArrowRight 
                 size={20} 
                 className="ml-2 group-hover:translate-x-2 transition-transform duration-300" 
@@ -263,7 +263,7 @@ const Hero = () => {
             </button>
             <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn btn-secondary text-lg px-8 py-4 enhanced-hover"
+              className="btn btn-secondary-dark text-lg px-8 py-4 enhanced-hover"
             >
               View Our Services
             </button>
