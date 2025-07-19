@@ -49,20 +49,19 @@ const Navigation = () => {
 
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - Concept 2: Icon + Typography */}
+          {/* Logo - Concept 3: Animated Tech Circle */}
           <div className="flex-shrink-0 group">
             <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
-              <div 
-                className="w-12 h-12 rounded-xl mr-3 flex items-center justify-center transition-all duration-300 group-hover:scale-110 relative overflow-hidden"
-                style={{ 
-                  background: 'linear-gradient(135deg, #967259 0%, #634832 100%)',
-                  boxShadow: '0 4px 15px rgba(150, 114, 89, 0.3)'
-                }}
-              >
-                <span className="text-white font-bold text-lg relative z-10">AZ</span>
+              <div className="flex flex-col items-center mr-3">
                 <div 
-                  className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                ></div>
+                  className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 relative"
+                  style={{ 
+                    background: 'conic-gradient(from 45deg, #967259, #634832, #38220f, #967259)',
+                    animation: 'rotate 4s linear infinite'
+                  }}
+                >
+                  <span className="text-white font-bold text-sm relative z-10">AI</span>
+                </div>
               </div>
               <h2 
                 className="text-3xl font-bold transition-all duration-300 hover:opacity-80"
