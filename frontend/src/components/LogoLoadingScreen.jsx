@@ -208,36 +208,14 @@ const LogoLoadingScreen = ({ onComplete }) => {
           transform: translate3d(0, 0, 0);
         }
         
-        @keyframes professionalReveal {
+        @keyframes cleanFadeIn {
           0% { 
             opacity: 0;
-            transform: scale(0.8) translateY(20px);
-            filter: blur(4px);
-            text-shadow: none;
-          }
-          20% {
-            opacity: 0.3;
-            transform: scale(0.85) translateY(15px);
-            filter: blur(3px);
-            text-shadow: 0 0 8px rgba(150, 114, 89, 0.3);
-          }
-          50% {
-            opacity: 0.7;
-            transform: scale(0.95) translateY(5px);
-            filter: blur(1px);
-            text-shadow: 0 0 12px rgba(150, 114, 89, 0.5);
-          }
-          80% {
-            opacity: 0.95;
-            transform: scale(1.02) translateY(-2px);
-            filter: blur(0px);
-            text-shadow: 0 0 15px rgba(150, 114, 89, 0.6);
+            transform: scale(0.95);
           }
           100% { 
             opacity: 1;
-            transform: scale(1) translateY(0px);
-            filter: blur(0px);
-            text-shadow: 0 0 12px rgba(150, 114, 89, 0.4);
+            transform: scale(1);
           }
         }
         
