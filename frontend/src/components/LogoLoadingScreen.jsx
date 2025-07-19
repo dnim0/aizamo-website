@@ -208,63 +208,59 @@ const LogoLoadingScreen = ({ onComplete }) => {
           transform: translate3d(0, 0, 0);
         }
         
-        @keyframes techLogoConstruction {
+        @keyframes pixelDigitalization {
           0% { 
-            opacity: 0; 
-            transform: scale(0.1);
-            filter: blur(10px) brightness(0.3);
-            text-shadow: 0 0 0px rgba(150, 114, 89, 0);
-            letter-spacing: 20px;
+            opacity: 0;
+            transform: scale(1);
+            filter: blur(0px);
+            background: linear-gradient(90deg, transparent 0%, transparent 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: none;
           }
-          15% {
-            opacity: 0.3;
-            transform: scale(0.4);
-            filter: blur(6px) brightness(0.6);
-            text-shadow: 
-              0 0 5px rgba(150, 114, 89, 0.3),
-              0 0 10px rgba(150, 114, 89, 0.2);
-            letter-spacing: 15px;
+          10% {
+            opacity: 1;
+            background: linear-gradient(90deg, #38220f 0%, #38220f 5%, transparent 5%, transparent 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 2px rgba(150, 114, 89, 0.3);
           }
-          35% {
-            opacity: 0.6;
-            transform: scale(0.7);
-            filter: blur(3px) brightness(0.8);
-            text-shadow: 
-              0 0 8px rgba(150, 114, 89, 0.5),
-              0 0 15px rgba(150, 114, 89, 0.3),
-              0 0 25px rgba(150, 114, 89, 0.2);
-            letter-spacing: 8px;
+          25% {
+            background: linear-gradient(90deg, #38220f 0%, #38220f 20%, transparent 20%, transparent 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 4px rgba(150, 114, 89, 0.4);
           }
-          60% {
-            opacity: 0.8;
-            transform: scale(0.9);
-            filter: blur(1px) brightness(1.2);
-            text-shadow: 
-              0 0 12px rgba(150, 114, 89, 0.7),
-              0 0 20px rgba(150, 114, 89, 0.4),
-              0 0 35px rgba(150, 114, 89, 0.2),
-              inset 0 0 10px rgba(255, 255, 255, 0.1);
-            letter-spacing: 3px;
+          40% {
+            background: linear-gradient(90deg, #38220f 0%, #38220f 35%, transparent 35%, transparent 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 6px rgba(150, 114, 89, 0.5);
+          }
+          55% {
+            background: linear-gradient(90deg, #38220f 0%, #38220f 55%, transparent 55%, transparent 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 8px rgba(150, 114, 89, 0.6);
+          }
+          70% {
+            background: linear-gradient(90deg, #38220f 0%, #38220f 75%, transparent 75%, transparent 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 10px rgba(150, 114, 89, 0.7);
           }
           85% {
-            opacity: 0.95;
-            transform: scale(1.05);
-            filter: blur(0px) brightness(1.3);
-            text-shadow: 
-              0 0 15px rgba(150, 114, 89, 0.8),
-              0 0 25px rgba(150, 114, 89, 0.5),
-              0 0 40px rgba(150, 114, 89, 0.3),
-              0 0 2px rgba(255, 255, 255, 0.4);
-            letter-spacing: 1px;
+            background: linear-gradient(90deg, #38220f 0%, #38220f 90%, transparent 90%, transparent 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 12px rgba(150, 114, 89, 0.8);
           }
           100% { 
-            opacity: 1; 
+            opacity: 1;
             transform: scale(1);
-            filter: blur(0px) brightness(1);
-            text-shadow: 
-              0 0 20px rgba(150, 114, 89, 0.4),
-              0 0 1px rgba(255, 255, 255, 0.2);
-            letter-spacing: normal;
+            color: #38220f;
+            background: none;
+            text-shadow: 0 0 15px rgba(150, 114, 89, 0.4);
           }
         }
         
