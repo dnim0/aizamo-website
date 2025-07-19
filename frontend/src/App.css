@@ -311,7 +311,7 @@ p {
 
 .btn-secondary-dark:hover {
   background: rgba(99, 72, 50, 0.9);
-  color: var(--white);
+  color: var(--darkest-brown);
   transform: translateY(-3px) scale(1.02);
   border: 2px solid rgba(236, 224, 209, 0.8);
   box-shadow: 0 12px 35px rgba(99, 72, 50, 0.3);
