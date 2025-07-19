@@ -62,82 +62,56 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
-                {/* Animated Dots - Flowing dotted pattern with continuous animation */}
+                {/* Electrical Spark - Electric-inspired effect with yellow highlights and pulsing brightness */}
                 <div className="absolute bottom-0 left-0 w-full">
-                  {/* Base dotted line - always visible */}
+                  {/* Base electrical line - always visible */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500"
                     style={{ 
-                      background: `
-                        repeating-linear-gradient(
-                          90deg,
-                          transparent 0px,
-                          transparent 2px,
-                          #967259 2px,
-                          #967259 4px,
-                          transparent 4px,
-                          transparent 8px,
-                          #634832 8px,
-                          #634832 10px,
-                          transparent 10px,
-                          transparent 14px
-                        )
-                      `,
+                      background: 'linear-gradient(90deg, transparent 0%, #967259 20%, #ffd700 50%, #634832 80%, transparent 100%)',
                       width: '100%',
-                      opacity: '0.5',
-                      backgroundSize: '20px 100%'
+                      opacity: '0.6',
+                      filter: 'drop-shadow(0 0 1px rgba(255, 215, 0, 0.3))'
                     }}
                   ></div>
                   
-                  {/* Flowing dots animation - enhanced on hover */}
+                  {/* Electrical sparks - small highlights along the line */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-30 group-hover:opacity-100"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-40 group-hover:opacity-100"
                     style={{ 
                       background: `
-                        repeating-linear-gradient(
-                          90deg,
-                          transparent 0px,
-                          transparent 1px,
-                          #967259 1px,
-                          #967259 3px,
-                          transparent 3px,
-                          transparent 5px,
-                          #ffd700 5px,
-                          #ffd700 7px,
-                          transparent 7px,
-                          transparent 9px,
-                          #634832 9px,
-                          #634832 11px,
-                          transparent 11px,
-                          transparent 15px
-                        )
+                        radial-gradient(circle at 10%, #ffd700 0.5px, transparent 0.5px),
+                        radial-gradient(circle at 25%, rgba(255, 215, 0, 0.8) 0.5px, transparent 0.5px),
+                        radial-gradient(circle at 40%, #ffd700 0.5px, transparent 0.5px),
+                        radial-gradient(circle at 60%, rgba(255, 215, 0, 0.6) 0.5px, transparent 0.5px),
+                        radial-gradient(circle at 75%, #ffd700 0.5px, transparent 0.5px),
+                        radial-gradient(circle at 90%, rgba(255, 215, 0, 0.8) 0.5px, transparent 0.5px)
                       `,
                       width: '100%',
-                      backgroundSize: '24px 100%',
-                      animation: 'flowingDots 2s linear infinite',
-                      filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.4))'
+                      animation: 'electricalPulse 1.5s ease-in-out infinite alternate',
+                      filter: 'drop-shadow(0 0 2px rgba(255, 215, 0, 0.5))'
                     }}
                   ></div>
 
-                  {/* Additional flowing layer for depth */}
+                  {/* Main electric glow effect on hover */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-60"
+                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-100 transform -translate-y-0.5"
                     style={{ 
-                      background: `
-                        repeating-linear-gradient(
-                          90deg,
-                          transparent 0px,
-                          transparent 3px,
-                          rgba(150, 114, 89, 0.8) 3px,
-                          rgba(150, 114, 89, 0.8) 5px,
-                          transparent 5px,
-                          transparent 10px
-                        )
-                      `,
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.4) 20%, rgba(255, 255, 0, 0.6) 50%, rgba(255, 215, 0, 0.4) 80%, transparent 100%)',
                       width: '100%',
-                      backgroundSize: '18px 100%',
-                      animation: 'flowingDots 3s linear infinite reverse',
-                      transform: 'translateY(-1px)'
+                      filter: 'blur(1px)',
+                      animation: 'electricalGlow 2s ease-in-out infinite alternate'
+                    }}
+                  ></div>
+
+                  {/* Pulsing bright line on hover */}
+                  <div 
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-100"
+                    style={{ 
+                      background: 'linear-gradient(90deg, transparent 0%, #967259 15%, #ffd700 30%, #ffff00 50%, #ffd700 70%, #634832 85%, transparent 100%)',
+                      width: '100%',
+                      animation: 'electricalBrightness 1.2s ease-in-out infinite alternate',
+                      filter: 'drop-shadow(0 0 3px rgba(255, 255, 0, 0.7))'
                     }}
                   ></div>
                 </div>
