@@ -206,11 +206,25 @@ const Hero = () => {
 
       <div className="container relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Enhanced Main Heading */}
+          {/* Enhanced Main Heading with New Slogan */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 enhanced-fade-in-up">
-            <span style={{ color: 'var(--darkest-brown)' }}>Scale Your Business</span>
-            <br />
-            <span style={{ color: 'var(--medium-brown)' }}>with AI Automation</span>
+            <div className="flex flex-col items-center">
+              <span style={{ color: 'var(--darkest-brown)' }}>Automate the Ordinary</span>
+              
+              {/* Stylish Dividing Line */}
+              <div className="flex items-center my-4 w-full max-w-md">
+                <div className="flex-grow h-px bg-gradient-to-r from-transparent via-medium-brown to-transparent opacity-40"></div>
+                <div className="px-4">
+                  <div 
+                    className="w-2 h-2 rounded-full"
+                    style={{ background: 'var(--medium-brown)' }}
+                  ></div>
+                </div>
+                <div className="flex-grow h-px bg-gradient-to-r from-medium-brown via-medium-brown to-transparent opacity-40"></div>
+              </div>
+              
+              <span style={{ color: 'var(--medium-brown)' }}>Scale the Extraordinary</span>
+            </div>
           </h1>
 
           {/* Typewriter Effect Subheading */}
