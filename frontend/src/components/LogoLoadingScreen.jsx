@@ -235,16 +235,25 @@ const LogoLoadingScreen = ({ onComplete }) => {
           }
         }
         
+        @keyframes optimizedProgressFill {
+          0% { 
+            transform: scaleX(0);
+            opacity: 0.8;
+          }
+          5% {
+            opacity: 1;
+          }
+          100% { 
+            transform: scaleX(1);
+            opacity: 1;
+          }
+        }
+        
         @keyframes loadingTextFade {
           0% { opacity: 0; }
           30% { opacity: 1; }
           70% { opacity: 1; }
           100% { opacity: 0; }
-        }
-        
-        @keyframes progressFill {
-          0% { width: 0%; }
-          100% { width: 100%; }
         }
       `}</style>
     </div>
