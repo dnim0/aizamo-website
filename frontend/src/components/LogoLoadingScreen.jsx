@@ -22,13 +22,22 @@ const LogoLoadingScreen = ({ onComplete }) => {
   }, [onComplete]);
 
   const createWavePixelFormation = (container) => {
-    const pixelCount = 150;
+    const pixelCount = 120; // Reduced from 150 for better performance
     const containerRect = container.getBoundingClientRect();
     const centerX = containerRect.width / 2;
     const centerY = containerRect.height / 2;
 
-    // Clear existing pixels
+    // Clear existing pixels and styles
     container.innerHTML = '';
+    const existingStyle = document.getElementById('wave-pixel-animations');
+    if (existingStyle) {
+      existingStyle.remove();
+    }
+
+    // Create style element once
+    const styleSheet = document.createElement('style');
+    styleSheet.id = 'wave-pixel-animations';
+    document.head.appendChild(styleSheet);
 
     // Logo letter positions for targeting
     const logoLetterPositions = [
@@ -39,6 +48,10 @@ const LogoLoadingScreen = ({ onComplete }) => {
       {x: 97, y: 50, width: 15, height: 20}, // m
       {x: 115, y: 50, width: 12, height: 20} // o
     ];
+
+    // Create document fragment for batch DOM operations
+    const fragment = document.createDocumentFragment();
+    let animationRules = '';
 
     for (let i = 0; i < pixelCount; i++) {
       const pixel = document.createElement('div');
@@ -58,21 +71,55 @@ const LogoLoadingScreen = ({ onComplete }) => {
       const targetX = (letterPos.x / 100) * containerRect.width + offsetX;
       const targetY = (letterPos.y / 100) * containerRect.height + offsetY;
 
-      // Set initial position and style
-      pixel.style.left = startX + 'px';
-      pixel.style.top = startY + 'px';
-      pixel.style.width = (Math.random() * 3 + 2) + 'px';
-      pixel.style.height = pixel.style.width;
+      // Use transforms instead of left/top for better performance
+      const deltaX = targetX - startX;
+      const deltaY = targetY - startY;
 
-      // Create and apply custom animation
+      // Set initial position using transform
+      pixel.style.cssText = `
+        position: absolute;
+        left: ${startX}px;
+        top: ${startY}px;
+        width: ${Math.random() * 2 + 2}px;
+        height: ${Math.random() * 2 + 2}px;
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+        transform: translate3d(0, 0, 0) scale(0.5);
+        opacity: 0;
+      `;
+
+      // Create optimized animation
       const animationName = `wavePixel-${i}`;
-      createPixelAnimation(animationName, startX, startY, targetX, targetY);
+      const delay = i * 10; // Reduced delay for smoother stagger
       
-      pixel.style.animation = `${animationName} 3.5s ease-out forwards`;
-      pixel.style.animationDelay = (i * 15) + 'ms';
-
-      container.appendChild(pixel);
+      animationRules += `
+        @keyframes ${animationName} {
+          0% {
+            transform: translate3d(0, 0, 0) scale(0.5);
+            opacity: 1;
+          }
+          20% {
+            transform: translate3d(${deltaX * 0.1}px, ${deltaY * 0.1}px, 0) scale(1);
+            opacity: 1;
+          }
+          85% {
+            transform: translate3d(${deltaX}px, ${deltaY}px, 0) scale(1);
+            opacity: 1;
+          }
+          100% {
+            transform: translate3d(${deltaX}px, ${deltaY}px, 0) scale(0.8);
+            opacity: 0;
+          }
+        }
+      `;
+      
+      pixel.style.animation = `${animationName} 3.5s cubic-bezier(0.25, 0.1, 0.25, 1) ${delay}ms forwards`;
+      fragment.appendChild(pixel);
     }
+
+    // Add all animations at once and append all pixels
+    styleSheet.textContent = animationRules;
+    container.appendChild(fragment);
   };
 
   const createPixelAnimation = (name, startX, startY, targetX, targetY) => {
