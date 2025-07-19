@@ -62,24 +62,50 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
-                {/* Double Line - Two-tiered underline effect with staggered timing */}
+                {/* Circuit Trace - Tech-inspired circuit board trace with inner glow */}
                 <div className="absolute bottom-0 left-0 w-full">
-                  {/* First underline - main line */}
+                  {/* Main circuit trace line - always visible */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 ease-out transform origin-left scale-x-0 group-hover:scale-x-100"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-600 ease-out"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 10%, #967259 30%, #634832 70%, transparent 90%)',
-                      width: '100%'
+                      background: 'linear-gradient(90deg, transparent 0%, #967259 20%, #634832 50%, #967259 80%, transparent 100%)',
+                      width: '100%',
+                      opacity: '0.6',
+                      filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.3))'
                     }}
                   ></div>
-                  {/* Second underline - accent line with delay */}
+                  {/* Circuit nodes/dots - always visible, enhanced on hover */}
                   <div 
-                    className="absolute bottom-1 left-0 h-0.5 transition-all duration-700 ease-out transform origin-left scale-x-0 group-hover:scale-x-100"
+                    className="absolute bottom-0 left-0 w-full h-0.5 transition-all duration-600 ease-out"
+                    style={{
+                      background: `
+                        radial-gradient(circle at 15%, #967259 1px, transparent 1px),
+                        radial-gradient(circle at 35%, #634832 1px, transparent 1px),
+                        radial-gradient(circle at 55%, #967259 1px, transparent 1px),
+                        radial-gradient(circle at 75%, #634832 1px, transparent 1px),
+                        radial-gradient(circle at 90%, #967259 1px, transparent 1px)
+                      `,
+                      opacity: '0.4'
+                    }}
+                  ></div>
+                  {/* Hover enhancement - inner glow effect */}
+                  <div 
+                    className="absolute bottom-0 left-0 h-1 transition-all duration-600 ease-out opacity-0 group-hover:opacity-100 transform -translate-y-0.5"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 20%, #634832 40%, #967259 60%, transparent 80%)',
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(150, 114, 89, 0.3) 20%, rgba(99, 72, 50, 0.4) 50%, rgba(150, 114, 89, 0.3) 80%, transparent 100%)',
                       width: '100%',
-                      transitionDelay: '150ms',
-                      opacity: '0.7'
+                      filter: 'blur(2px)',
+                      animationDelay: '100ms'
+                    }}
+                  ></div>
+                  {/* Circuit trace bounce effect on hover */}
+                  <div 
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-800 ease-out opacity-0 group-hover:opacity-100"
+                    style={{ 
+                      background: 'linear-gradient(90deg, transparent 0%, #967259 20%, #ffd700 50%, #967259 80%, transparent 100%)',
+                      width: '100%',
+                      transitionTimingFunction: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                      filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.5))'
                     }}
                   ></div>
                 </div>
