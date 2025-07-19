@@ -62,56 +62,79 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
-                {/* Electrical Spark - Electric-inspired effect with yellow highlights and pulsing brightness */}
+                {/* Wave Motion - Gradient wave that continuously flows left to right with smooth motion */}
                 <div className="absolute bottom-0 left-0 w-full">
-                  {/* Base electrical line - always visible */}
+                  {/* Base wave line - always visible */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, #967259 20%, #ffd700 50%, #634832 80%, transparent 100%)',
+                      background: 'linear-gradient(90deg, transparent 0%, #967259 30%, #634832 50%, #967259 70%, transparent 100%)',
                       width: '100%',
-                      opacity: '0.6',
-                      filter: 'drop-shadow(0 0 1px rgba(255, 215, 0, 0.3))'
+                      opacity: '0.5'
                     }}
                   ></div>
                   
-                  {/* Electrical sparks - small highlights along the line */}
+                  {/* Flowing wave effect - always animating, enhanced on hover */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-40 group-hover:opacity-100"
                     style={{ 
                       background: `
-                        radial-gradient(circle at 10%, #ffd700 0.5px, transparent 0.5px),
-                        radial-gradient(circle at 25%, rgba(255, 215, 0, 0.8) 0.5px, transparent 0.5px),
-                        radial-gradient(circle at 40%, #ffd700 0.5px, transparent 0.5px),
-                        radial-gradient(circle at 60%, rgba(255, 215, 0, 0.6) 0.5px, transparent 0.5px),
-                        radial-gradient(circle at 75%, #ffd700 0.5px, transparent 0.5px),
-                        radial-gradient(circle at 90%, rgba(255, 215, 0, 0.8) 0.5px, transparent 0.5px)
+                        linear-gradient(
+                          90deg,
+                          transparent 0%,
+                          rgba(150, 114, 89, 0.8) 20%,
+                          rgba(99, 72, 50, 1) 40%,
+                          rgba(150, 114, 89, 0.8) 60%,
+                          transparent 80%
+                        )
                       `,
-                      width: '100%',
-                      animation: 'electricalPulse 1.5s ease-in-out infinite alternate',
-                      filter: 'drop-shadow(0 0 2px rgba(255, 215, 0, 0.5))'
+                      width: '150%',
+                      backgroundSize: '200% 100%',
+                      animation: 'waveFlow 3s linear infinite',
+                      filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.4))'
                     }}
                   ></div>
 
-                  {/* Main electric glow effect on hover */}
+                  {/* Secondary wave for depth - opposite direction */}
                   <div 
-                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-100 transform -translate-y-0.5"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-60"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.4) 20%, rgba(255, 255, 0, 0.6) 50%, rgba(255, 215, 0, 0.4) 80%, transparent 100%)',
-                      width: '100%',
-                      filter: 'blur(1px)',
-                      animation: 'electricalGlow 2s ease-in-out infinite alternate'
+                      background: `
+                        linear-gradient(
+                          90deg,
+                          transparent 0%,
+                          rgba(99, 72, 50, 0.6) 25%,
+                          rgba(150, 114, 89, 0.9) 45%,
+                          rgba(99, 72, 50, 0.6) 65%,
+                          transparent 85%
+                        )
+                      `,
+                      width: '120%',
+                      backgroundSize: '150% 100%',
+                      animation: 'waveFlow 4s linear infinite reverse',
+                      transform: 'translateY(-0.5px)',
+                      filter: 'blur(0.5px)'
                     }}
                   ></div>
 
-                  {/* Pulsing bright line on hover */}
+                  {/* Smooth wave highlights on hover */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-100"
+                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-80 transform -translate-y-0.5"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, #967259 15%, #ffd700 30%, #ffff00 50%, #ffd700 70%, #634832 85%, transparent 100%)',
-                      width: '100%',
-                      animation: 'electricalBrightness 1.2s ease-in-out infinite alternate',
-                      filter: 'drop-shadow(0 0 3px rgba(255, 255, 0, 0.7))'
+                      background: `
+                        linear-gradient(
+                          90deg,
+                          transparent 0%,
+                          rgba(150, 114, 89, 0.3) 30%,
+                          rgba(255, 215, 0, 0.4) 50%,
+                          rgba(150, 114, 89, 0.3) 70%,
+                          transparent 100%
+                        )
+                      `,
+                      width: '130%',
+                      backgroundSize: '180% 100%',
+                      animation: 'waveFlow 2.5s ease-in-out infinite',
+                      filter: 'blur(1px)'
                     }}
                   ></div>
                 </div>
