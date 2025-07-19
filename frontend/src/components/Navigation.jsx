@@ -49,25 +49,26 @@ const Navigation = () => {
 
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - Concept 1: Gradient Typography */}
+          {/* Logo - Concept 2: Icon + Typography */}
           <div className="flex-shrink-0 group">
             <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
-              <h2 
-                className="text-3xl font-bold transition-all duration-300 hover:opacity-80 relative"
+              <div 
+                className="w-12 h-12 rounded-xl mr-3 flex items-center justify-center transition-all duration-300 group-hover:scale-110 relative overflow-hidden"
                 style={{ 
-                  background: 'linear-gradient(135deg, #967259 0%, #634832 50%, #38220f 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
+                  background: 'linear-gradient(135deg, #967259 0%, #634832 100%)',
+                  boxShadow: '0 4px 15px rgba(150, 114, 89, 0.3)'
                 }}
               >
-                AIzamo
+                <span className="text-white font-bold text-lg relative z-10">AZ</span>
                 <div 
-                  className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
-                  style={{ 
-                    background: 'linear-gradient(90deg, transparent, #967259, transparent)' 
-                  }}
+                  className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
+              </div>
+              <h2 
+                className="text-3xl font-bold transition-all duration-300 hover:opacity-80"
+                style={{ color: 'var(--darkest-brown)' }}
+              >
+                AIzamo
               </h2>
             </div>
           </div>
