@@ -55,6 +55,7 @@ const Hero = () => {
         index++;
       } else {
         clearInterval(timer);
+        setTypewriterComplete(true); // Mark typewriter as complete
         // Trigger stats animation after typewriter completes
         setTimeout(() => {
           setStatsAnimated(true);
