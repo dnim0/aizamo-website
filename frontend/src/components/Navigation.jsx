@@ -49,41 +49,26 @@ const Navigation = () => {
 
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - Concept 5: Premium Badge */}
+          {/* Logo - Concept 1: Gradient Typography */}
           <div className="flex-shrink-0 group">
-            <div className="flex items-center cursor-pointer relative" onClick={() => scrollToSection('hero')}>
-              <div className="relative">
-                {/* Glass background */}
+            <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
+              <h2 
+                className="text-3xl font-bold transition-all duration-300 hover:opacity-80 relative"
+                style={{ 
+                  background: 'linear-gradient(135deg, #967259 0%, #634832 50%, #38220f 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}
+              >
+                AIzamo
                 <div 
-                  className="absolute inset-x-0 inset-y-0 -mx-3 -my-2 rounded-2xl transition-all duration-300"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
                   style={{ 
-                    background: 'linear-gradient(45deg, rgba(150, 114, 89, 0.1), rgba(99, 72, 50, 0.1))',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(150, 114, 89, 0.2)'
+                    background: 'linear-gradient(90deg, transparent, #967259, transparent)' 
                   }}
                 ></div>
-                
-                {/* Logo text */}
-                <h2 
-                  className="text-3xl font-bold transition-all duration-300 hover:opacity-90 relative z-10 px-3 py-2"
-                  style={{ 
-                    color: 'var(--darkest-brown)',
-                    textShadow: '0 2px 4px rgba(150, 114, 89, 0.1)'
-                  }}
-                >
-                  AIzamo
-                </h2>
-                
-                {/* Glowing accent dot */}
-                <div 
-                  className="absolute -top-1 -right-1 w-4 h-4 rounded-full transition-all duration-300 group-hover:scale-125"
-                  style={{ 
-                    background: '#967259',
-                    boxShadow: '0 0 15px rgba(150, 114, 89, 0.5), 0 0 30px rgba(150, 114, 89, 0.3)',
-                    animation: 'pulse 3s infinite'
-                  }}
-                ></div>
-              </div>
+              </h2>
             </div>
           </div>
 
