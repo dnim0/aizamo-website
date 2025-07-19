@@ -64,7 +64,7 @@ const Hero = () => {
           setTimeout(() => setRoiStart(true), 400);
         }, 500); // Small delay after typewriter finishes
       }
-    }, 30); // 30ms per character for smooth typing
+    }, 50); // 50ms per character for slower, more readable typing
 
     return () => clearInterval(timer);
   }, [isVisible]);
