@@ -49,23 +49,25 @@ const Navigation = () => {
 
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo - Concept 1: Gradient Typography */}
           <div className="flex-shrink-0 group">
             <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
-              <div 
-                className="w-10 h-10 rounded-full mr-3 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+              <h2 
+                className="text-3xl font-bold transition-all duration-300 hover:opacity-80 relative"
                 style={{ 
-                  background: 'linear-gradient(135deg, var(--medium-brown) 0%, var(--dark-brown) 100%)',
-                  boxShadow: '0 4px 15px rgba(150, 114, 89, 0.3)'
+                  background: 'linear-gradient(135deg, #967259 0%, #634832 50%, #38220f 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
                 }}
               >
-                <Sparkles size={20} color="white" className="animate-pulse" />
-              </div>
-              <h2 
-                className="text-2xl font-bold transition-all duration-300 hover:opacity-80"
-                style={{ color: 'var(--darkest-brown)' }}
-              >
                 AIzamo
+                <div 
+                  className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
+                  style={{ 
+                    background: 'linear-gradient(90deg, transparent, #967259, transparent)' 
+                  }}
+                ></div>
               </h2>
             </div>
           </div>
