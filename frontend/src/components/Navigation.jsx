@@ -62,77 +62,94 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
-                {/* Particle Trail - Underline with trailing particle shadows creating depth and motion */}
+                {/* Neural Network - AI-themed neural nodes with pulsing connections */}
                 <div className="absolute bottom-0 left-0 w-full">
-                  {/* Base particle line - always visible */}
+                  {/* Base neural connection line - always visible */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, #967259 30%, #634832 50%, #967259 70%, transparent 100%)',
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(150, 114, 89, 0.3) 10%, rgba(99, 72, 50, 0.6) 30%, rgba(150, 114, 89, 0.8) 50%, rgba(99, 72, 50, 0.6) 70%, rgba(150, 114, 89, 0.3) 90%, transparent 100%)',
                       width: '100%',
-                      opacity: '0.6',
-                      filter: 'drop-shadow(0 0 1px rgba(150, 114, 89, 0.3))'
+                      opacity: '0.6'
                     }}
                   ></div>
                   
-                  {/* Particle trail effects - always visible, enhanced on hover */}
+                  {/* Neural nodes - always visible, enhanced on hover */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-40 group-hover:opacity-100"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-50 group-hover:opacity-100"
                     style={{ 
                       background: `
-                        radial-gradient(ellipse at 15% center, rgba(150, 114, 89, 0.8) 1px, transparent 3px),
-                        radial-gradient(ellipse at 25% center, rgba(99, 72, 50, 0.6) 0.5px, transparent 2px),
-                        radial-gradient(ellipse at 35% center, rgba(150, 114, 89, 0.9) 1px, transparent 3px),
-                        radial-gradient(ellipse at 45% center, rgba(99, 72, 50, 0.7) 0.5px, transparent 2px),
-                        radial-gradient(ellipse at 55% center, rgba(150, 114, 89, 0.8) 1px, transparent 3px),
-                        radial-gradient(ellipse at 65% center, rgba(99, 72, 50, 0.6) 0.5px, transparent 2px),
-                        radial-gradient(ellipse at 75% center, rgba(150, 114, 89, 0.9) 1px, transparent 3px),
-                        radial-gradient(ellipse at 85% center, rgba(99, 72, 50, 0.7) 0.5px, transparent 2px)
+                        radial-gradient(circle at 15% center, #967259 1.5px, rgba(150, 114, 89, 0.3) 2px, transparent 3px),
+                        radial-gradient(circle at 35% center, #634832 1px, rgba(99, 72, 50, 0.4) 1.5px, transparent 2.5px),
+                        radial-gradient(circle at 55% center, #967259 2px, rgba(150, 114, 89, 0.5) 2.5px, transparent 3.5px),
+                        radial-gradient(circle at 75% center, #634832 1px, rgba(99, 72, 50, 0.4) 1.5px, transparent 2.5px),
+                        radial-gradient(circle at 90% center, #38220f 1.5px, rgba(56, 34, 15, 0.3) 2px, transparent 3px)
                       `,
                       width: '100%',
-                      animation: 'particleFloat 3s ease-in-out infinite',
-                      filter: 'blur(0.3px)'
+                      animation: 'neuralPulse 2s ease-in-out infinite'
                     }}
                   ></div>
 
-                  {/* Motion blur trail on hover */}
-                  <div 
-                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-70 transform -translate-y-0.5"
-                    style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, rgba(150, 114, 89, 0.2) 20%, rgba(99, 72, 50, 0.4) 50%, rgba(150, 114, 89, 0.2) 80%, transparent 100%)',
-                      width: '100%',
-                      filter: 'blur(2px)',
-                      animation: 'motionBlur 2s ease-in-out infinite alternate'
-                    }}
-                  ></div>
-
-                  {/* Trailing particles with staggered animation */}
+                  {/* Pulsing connections between nodes on hover */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-80"
                     style={{ 
                       background: `
-                        radial-gradient(circle at 10% center, rgba(150, 114, 89, 0.9) 0.5px, transparent 2px),
-                        radial-gradient(circle at 30% center, rgba(99, 72, 50, 0.7) 0.5px, transparent 2px),
-                        radial-gradient(circle at 50% center, rgba(150, 114, 89, 1) 0.5px, transparent 2px),
-                        radial-gradient(circle at 70% center, rgba(99, 72, 50, 0.8) 0.5px, transparent 2px),
-                        radial-gradient(circle at 90% center, rgba(150, 114, 89, 0.9) 0.5px, transparent 2px)
+                        linear-gradient(90deg, 
+                          transparent 0%,
+                          transparent 13%,
+                          rgba(150, 114, 89, 0.8) 15%,
+                          rgba(150, 114, 89, 0.4) 17%,
+                          transparent 18%,
+                          transparent 33%,
+                          rgba(99, 72, 50, 0.8) 35%,
+                          rgba(99, 72, 50, 0.4) 37%,
+                          transparent 38%,
+                          transparent 53%,
+                          rgba(150, 114, 89, 1) 55%,
+                          rgba(150, 114, 89, 0.5) 57%,
+                          transparent 58%,
+                          transparent 73%,
+                          rgba(99, 72, 50, 0.8) 75%,
+                          rgba(99, 72, 50, 0.4) 77%,
+                          transparent 78%,
+                          transparent 88%,
+                          rgba(56, 34, 15, 0.8) 90%,
+                          rgba(56, 34, 15, 0.4) 92%,
+                          transparent 93%,
+                          transparent 100%
+                        )
                       `,
                       width: '100%',
-                      animation: 'particleTrail 1.8s ease-out infinite',
-                      transform: 'translateY(-1px)',
-                      filter: 'drop-shadow(0 1px 2px rgba(150, 114, 89, 0.3))'
+                      animation: 'neuralConnections 1.5s ease-in-out infinite alternate',
+                      filter: 'drop-shadow(0 0 1px rgba(150, 114, 89, 0.5))'
                     }}
                   ></div>
 
-                  {/* Shadow depth effect */}
+                  {/* AI network glow on hover */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-50"
+                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-60 transform -translate-y-0.5"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, rgba(56, 34, 15, 0.6) 30%, rgba(99, 72, 50, 0.8) 50%, rgba(56, 34, 15, 0.6) 70%, transparent 100%)',
+                      background: 'radial-gradient(ellipse at 55% center, rgba(150, 114, 89, 0.4) 20%, rgba(99, 72, 50, 0.3) 40%, transparent 60%)',
                       width: '100%',
-                      transform: 'translateY(1px)',
-                      filter: 'blur(1px)',
-                      animation: 'shadowDepth 2.5s ease-in-out infinite alternate'
+                      filter: 'blur(2px)',
+                      animation: 'aiGlow 3s ease-in-out infinite alternate'
+                    }}
+                  ></div>
+
+                  {/* Neural activity signals */}
+                  <div 
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-90"
+                    style={{ 
+                      background: `
+                        radial-gradient(circle at 20% center, rgba(255, 215, 0, 0.8) 0.5px, transparent 1px),
+                        radial-gradient(circle at 40% center, rgba(255, 215, 0, 0.6) 0.5px, transparent 1px),
+                        radial-gradient(circle at 60% center, rgba(255, 215, 0, 1) 0.5px, transparent 1px),
+                        radial-gradient(circle at 80% center, rgba(255, 215, 0, 0.7) 0.5px, transparent 1px)
+                      `,
+                      width: '100%',
+                      animation: 'neuralSignals 1.8s linear infinite',
+                      filter: 'drop-shadow(0 0 2px rgba(255, 215, 0, 0.4))'
                     }}
                   ></div>
                 </div>
