@@ -62,79 +62,61 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
-                {/* Wave Motion - Gradient wave that continuously flows left to right with smooth motion */}
+                {/* Morphing Gradient - Color-shifting gradient that morphs through your brand colors */}
                 <div className="absolute bottom-0 left-0 w-full">
-                  {/* Base wave line - always visible */}
+                  {/* Base morphing gradient line - always visible */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, #967259 30%, #634832 50%, #967259 70%, transparent 100%)',
+                      background: 'linear-gradient(90deg, transparent 0%, #967259 25%, #634832 50%, #38220f 75%, transparent 100%)',
                       width: '100%',
-                      opacity: '0.5'
+                      opacity: '0.6',
+                      animation: 'morphingColors 4s ease-in-out infinite'
                     }}
                   ></div>
                   
-                  {/* Flowing wave effect - always animating, enhanced on hover */}
+                  {/* Color morphing animation layer - enhanced on hover */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-40 group-hover:opacity-100"
                     style={{ 
-                      background: `
-                        linear-gradient(
-                          90deg,
-                          transparent 0%,
-                          rgba(150, 114, 89, 0.8) 20%,
-                          rgba(99, 72, 50, 1) 40%,
-                          rgba(150, 114, 89, 0.8) 60%,
-                          transparent 80%
-                        )
-                      `,
-                      width: '150%',
-                      backgroundSize: '200% 100%',
-                      animation: 'waveFlow 3s linear infinite',
+                      background: 'linear-gradient(90deg, transparent 0%, #ece0d1 20%, #dbc1ac 40%, #967259 60%, #634832 80%, transparent 100%)',
+                      width: '100%',
+                      animation: 'brandColorShift 3s ease-in-out infinite alternate',
                       filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.4))'
                     }}
                   ></div>
 
-                  {/* Secondary wave for depth - opposite direction */}
+                  {/* Shifting gradient overlay for smooth transitions */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-60"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-80"
                     style={{ 
-                      background: `
-                        linear-gradient(
-                          90deg,
-                          transparent 0%,
-                          rgba(99, 72, 50, 0.6) 25%,
-                          rgba(150, 114, 89, 0.9) 45%,
-                          rgba(99, 72, 50, 0.6) 65%,
-                          transparent 85%
-                        )
-                      `,
-                      width: '120%',
-                      backgroundSize: '150% 100%',
-                      animation: 'waveFlow 4s linear infinite reverse',
-                      transform: 'translateY(-0.5px)',
-                      filter: 'blur(0.5px)'
+                      background: 'linear-gradient(90deg, transparent 0%, #38220f 15%, #634832 30%, #967259 45%, #dbc1ac 60%, #ece0d1 75%, transparent 100%)',
+                      width: '100%',
+                      animation: 'gradientShift 5s linear infinite',
+                      backgroundSize: '200% 100%',
+                      mixBlendMode: 'multiply'
                     }}
                   ></div>
 
-                  {/* Smooth wave highlights on hover */}
+                  {/* Warm glow effect on hover */}
                   <div 
-                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-80 transform -translate-y-0.5"
+                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-60 transform -translate-y-0.5"
                     style={{ 
-                      background: `
-                        linear-gradient(
-                          90deg,
-                          transparent 0%,
-                          rgba(150, 114, 89, 0.3) 30%,
-                          rgba(255, 215, 0, 0.4) 50%,
-                          rgba(150, 114, 89, 0.3) 70%,
-                          transparent 100%
-                        )
-                      `,
-                      width: '130%',
-                      backgroundSize: '180% 100%',
-                      animation: 'waveFlow 2.5s ease-in-out infinite',
-                      filter: 'blur(1px)'
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(236, 224, 209, 0.4) 20%, rgba(219, 193, 172, 0.5) 40%, rgba(150, 114, 89, 0.6) 60%, rgba(99, 72, 50, 0.4) 80%, transparent 100%)',
+                      width: '100%',
+                      filter: 'blur(1px)',
+                      animation: 'warmGlow 2s ease-in-out infinite alternate'
+                    }}
+                  ></div>
+
+                  {/* Color cycling highlight */}
+                  <div 
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-90"
+                    style={{ 
+                      background: 'linear-gradient(90deg, transparent 0%, var(--current-brand-color, #967259) 50%, transparent 100%)',
+                      width: '100%',
+                      animation: 'colorCycle 2.5s ease-in-out infinite',
+                      filter: 'brightness(1.2)'
                     }}
                   ></div>
                 </div>
