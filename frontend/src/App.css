@@ -20,30 +20,9 @@
 /* Import Google Fonts as Chapaza Alternative */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Import Chapaza Font (when available) */
-@font-face {
-  font-family: 'Chapaza';
-  src: url('./assets/fonts/Chapaza-Regular.woff2') format('woff2'),
-       url('./assets/fonts/Chapaza-Regular.woff') format('woff'),
-       url('./assets/fonts/Chapaza-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Chapaza';
-  src: url('./assets/fonts/Chapaza-Bold.woff2') format('woff2'),
-       url('./assets/fonts/Chapaza-Bold.woff') format('woff'),
-       url('./assets/fonts/Chapaza-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
 body {
-  /* Chapaza will be used if font files are available, otherwise fallback to Poppins */
-  font-family: 'Chapaza', 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  /* Using Poppins as a stylish font alternative until Chapaza font files are provided */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--cream);
