@@ -16,7 +16,7 @@ const LogoLoadingScreen = ({ onComplete }) => {
       if (onComplete) {
         onComplete();
       }
-    }, 5000);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
