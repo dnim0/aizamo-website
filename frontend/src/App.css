@@ -59,6 +59,50 @@ p {
   color: var(--text-secondary);
 }
 
+/* Navigation Bar Enhancements */
+.nav-transparent {
+  backdrop-filter: blur(20px);
+}
+
+.nav-scrolled {
+  backdrop-filter: blur(30px);
+  box-shadow: 0 8px 32px rgba(150, 114, 89, 0.15);
+}
+
+.nav-link {
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-slide-down {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
 /* Buttons with Glass Effect */
 .btn {
   padding: 12px 24px;
