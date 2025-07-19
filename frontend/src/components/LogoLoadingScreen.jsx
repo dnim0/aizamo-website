@@ -175,7 +175,7 @@ const LogoLoadingScreen = ({ onComplete }) => {
               background: 'linear-gradient(90deg, transparent 0%, #967259 30%, #634832 50%, #967259 70%, transparent 100%)',
               width: '100%',
               opacity: '0',
-              animation: 'baseLineReveal 0.5s ease-out 3.6s forwards'
+              animation: 'baseLineReveal 0.3s ease-out 3.2s forwards'
             }}
           ></div>
           
@@ -187,7 +187,7 @@ const LogoLoadingScreen = ({ onComplete }) => {
               width: '100%',
               opacity: '0.8',
               filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.3))',
-              animation: 'classicSweepIntro 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 3.8s forwards'
+              animation: 'classicSweepIntro 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 3.3s forwards'
             }}
           ></div>
 
@@ -200,7 +200,7 @@ const LogoLoadingScreen = ({ onComplete }) => {
               filter: 'blur(1px)',
               transform: 'translateY(-2px)',
               opacity: '0.6',
-              animation: 'glowSweepIntro 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 3.9s forwards'
+              animation: 'glowSweepIntro 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 3.4s forwards'
             }}
           ></div>
         </div>
