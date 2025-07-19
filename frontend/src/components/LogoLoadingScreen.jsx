@@ -165,6 +165,45 @@ const LogoLoadingScreen = ({ onComplete }) => {
         }}
       >
         AIzamo
+        
+        {/* Classic Sweep Underline - matches navigation logo */}
+        <div className="absolute bottom-0 left-0 w-full">
+          {/* Base classic line - always visible after logo appears */}
+          <div 
+            className="absolute bottom-0 left-0 h-0.5"
+            style={{ 
+              background: 'linear-gradient(90deg, transparent 0%, #967259 30%, #634832 50%, #967259 70%, transparent 100%)',
+              width: '100%',
+              opacity: '0',
+              animation: 'baseLineReveal 0.5s ease-out 3.6s forwards'
+            }}
+          ></div>
+          
+          {/* Classic sweep effect - animated entrance */}
+          <div 
+            className="absolute bottom-0 left-0 h-0.5 transform origin-left scale-x-0"
+            style={{ 
+              background: 'linear-gradient(90deg, transparent 10%, #967259 30%, #634832 50%, #967259 70%, transparent 90%)',
+              width: '100%',
+              opacity: '0.8',
+              filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.3))',
+              animation: 'classicSweepIntro 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 3.8s forwards'
+            }}
+          ></div>
+
+          {/* Professional glow enhancement */}
+          <div 
+            className="absolute bottom-0 left-0 h-1 transform origin-left scale-x-0"
+            style={{ 
+              background: 'linear-gradient(90deg, transparent 0%, rgba(150, 114, 89, 0.3) 30%, rgba(99, 72, 50, 0.4) 50%, rgba(150, 114, 89, 0.3) 70%, transparent 100%)',
+              width: '100%',
+              filter: 'blur(1px)',
+              transform: 'translateY(-2px)',
+              opacity: '0.6',
+              animation: 'glowSweepIntro 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 3.9s forwards'
+            }}
+          ></div>
+        </div>
       </div>
 
       {/* Loading Text */}
