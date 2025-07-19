@@ -60,7 +60,7 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-32"
       style={{ background: `linear-gradient(135deg, var(--cream) 0%, var(--light-brown) 100%)` }}
     >
       {/* Animated Particles Background */}
