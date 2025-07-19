@@ -146,13 +146,7 @@ const Hero = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            // Trigger stats animation after a delay
-            setTimeout(() => {
-              setStatsAnimated(true);
-              setHoursStart(true);
-              setTimeout(() => setConversionStart(true), 200);
-              setTimeout(() => setRoiStart(true), 400);
-            }, 1000);
+            // Stats animation will now be triggered by typewriter completion
           }
         });
       },
