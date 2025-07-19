@@ -152,9 +152,32 @@ p {
 .btn-primary {
   background: var(--medium-brown);
   color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(236, 224, 209, 0.3);
   box-shadow: 0 4px 15px rgba(150, 114, 89, 0.2);
   position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #ece0d1 0%, 
+    #dbc1ac 25%, 
+    #ece0d1 50%, 
+    #dbc1ac 75%, 
+    #ece0d1 100%
+  );
+  background-size: 300% 300%;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: gradientShift 3s ease-in-out infinite;
 }
 
 .btn-primary::after {
