@@ -122,44 +122,12 @@ const LogoLoadingScreen = ({ onComplete }) => {
     container.appendChild(fragment);
   };
 
-  const createPixelAnimation = (name, startX, startY, targetX, targetY) => {
+  // Cleanup function to remove old animations
+  const cleanupAnimations = () => {
     const existingStyle = document.getElementById('wave-pixel-animations');
-    let styleSheet = existingStyle;
-    
-    if (!existingStyle) {
-      styleSheet = document.createElement('style');
-      styleSheet.id = 'wave-pixel-animations';
-      document.head.appendChild(styleSheet);
+    if (existingStyle) {
+      existingStyle.remove();
     }
-
-    const keyframes = `
-      @keyframes ${name} {
-        0% {
-          left: ${startX}px;
-          top: ${startY}px;
-          opacity: 1;
-          transform: scale(0.5);
-        }
-        20% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        85% {
-          left: ${targetX}px;
-          top: ${targetY}px;
-          opacity: 1;
-          transform: scale(1);
-        }
-        100% {
-          left: ${targetX}px;
-          top: ${targetY}px;
-          opacity: 0;
-          transform: scale(0.8);
-        }
-      }
-    `;
-    
-    styleSheet.sheet.insertRule(keyframes, styleSheet.sheet.cssRules.length);
   };
 
   if (!isAnimating) return null;
