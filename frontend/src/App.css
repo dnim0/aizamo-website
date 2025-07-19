@@ -234,6 +234,47 @@ p {
   transition: all 0.1s ease;
 }
 
+.btn-secondary-dark {
+  background: rgba(99, 72, 50, 0.1);
+  color: var(--dark-brown);
+  border: 2px solid rgba(99, 72, 50, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(99, 72, 50, 0.1);
+}
+
+.btn-secondary-dark::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(99, 72, 50, 0.1), rgba(99, 72, 50, 0.05));
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.btn-secondary-dark:hover {
+  background: rgba(99, 72, 50, 0.9);
+  color: var(--white);
+  transform: translateY(-3px) scale(1.02);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 35px rgba(99, 72, 50, 0.3);
+  backdrop-filter: blur(20px);
+}
+
+.btn-secondary-dark:hover::after {
+  opacity: 1;
+}
+
+.btn-secondary-dark:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 6px 20px rgba(99, 72, 50, 0.2);
+  transition: all 0.1s ease;
+}
+
 /* Glass effect enhancement */
 .btn:hover {
   backdrop-filter: blur(20px);
