@@ -62,14 +62,27 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
-                {/* Left-to-Right Sweep Underline */}
-                <div 
-                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-current to-transparent transition-all duration-700 ease-out transform origin-left scale-x-0 group-hover:scale-x-100"
-                  style={{ 
-                    background: 'linear-gradient(90deg, transparent 10%, #967259 30%, #634832 70%, transparent 90%)',
-                    width: '100%'
-                  }}
-                ></div>
+                {/* Double Line - Two-tiered underline effect with staggered timing */}
+                <div className="absolute bottom-0 left-0 w-full">
+                  {/* First underline - main line */}
+                  <div 
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 ease-out transform origin-left scale-x-0 group-hover:scale-x-100"
+                    style={{ 
+                      background: 'linear-gradient(90deg, transparent 10%, #967259 30%, #634832 70%, transparent 90%)',
+                      width: '100%'
+                    }}
+                  ></div>
+                  {/* Second underline - accent line with delay */}
+                  <div 
+                    className="absolute bottom-1 left-0 h-0.5 transition-all duration-700 ease-out transform origin-left scale-x-0 group-hover:scale-x-100"
+                    style={{ 
+                      background: 'linear-gradient(90deg, transparent 20%, #634832 40%, #967259 60%, transparent 80%)',
+                      width: '100%',
+                      transitionDelay: '150ms',
+                      opacity: '0.7'
+                    }}
+                  ></div>
+                </div>
                 
                 {/* Additional glow effect on hover */}
                 <div 
