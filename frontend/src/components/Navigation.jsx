@@ -62,94 +62,51 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
-                {/* Neural Network - AI-themed neural nodes with pulsing connections */}
+                {/* Classic Sweep - Smooth left-to-right gradient sweep with elegant cubic-bezier easing */}
                 <div className="absolute bottom-0 left-0 w-full">
-                  {/* Base neural connection line - always visible */}
+                  {/* Base classic line - always visible */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, rgba(150, 114, 89, 0.3) 10%, rgba(99, 72, 50, 0.6) 30%, rgba(150, 114, 89, 0.8) 50%, rgba(99, 72, 50, 0.6) 70%, rgba(150, 114, 89, 0.3) 90%, transparent 100%)',
+                      background: 'linear-gradient(90deg, transparent 0%, #967259 30%, #634832 50%, #967259 70%, transparent 100%)',
                       width: '100%',
-                      opacity: '0.6'
+                      opacity: '0.5'
                     }}
                   ></div>
                   
-                  {/* Neural nodes - always visible, enhanced on hover */}
+                  {/* Classic sweep effect - enhanced on hover */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-50 group-hover:opacity-100"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-700 ease-out transform origin-left scale-x-40 group-hover:scale-x-100"
                     style={{ 
-                      background: `
-                        radial-gradient(circle at 15% center, #967259 1.5px, rgba(150, 114, 89, 0.3) 2px, transparent 3px),
-                        radial-gradient(circle at 35% center, #634832 1px, rgba(99, 72, 50, 0.4) 1.5px, transparent 2.5px),
-                        radial-gradient(circle at 55% center, #967259 2px, rgba(150, 114, 89, 0.5) 2.5px, transparent 3.5px),
-                        radial-gradient(circle at 75% center, #634832 1px, rgba(99, 72, 50, 0.4) 1.5px, transparent 2.5px),
-                        radial-gradient(circle at 90% center, #38220f 1.5px, rgba(56, 34, 15, 0.3) 2px, transparent 3px)
-                      `,
+                      background: 'linear-gradient(90deg, transparent 10%, #967259 30%, #634832 50%, #967259 70%, transparent 90%)',
                       width: '100%',
-                      animation: 'neuralPulse 2s ease-in-out infinite'
+                      opacity: '0.8',
+                      transitionTimingFunction: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
+                      filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.3))'
                     }}
                   ></div>
 
-                  {/* Pulsing connections between nodes on hover */}
+                  {/* Professional glow enhancement on hover */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-80"
+                    className="absolute bottom-0 left-0 h-1 transition-all duration-700 ease-out opacity-0 group-hover:opacity-60 transform -translate-y-0.5 origin-left scale-x-0 group-hover:scale-x-100"
                     style={{ 
-                      background: `
-                        linear-gradient(90deg, 
-                          transparent 0%,
-                          transparent 13%,
-                          rgba(150, 114, 89, 0.8) 15%,
-                          rgba(150, 114, 89, 0.4) 17%,
-                          transparent 18%,
-                          transparent 33%,
-                          rgba(99, 72, 50, 0.8) 35%,
-                          rgba(99, 72, 50, 0.4) 37%,
-                          transparent 38%,
-                          transparent 53%,
-                          rgba(150, 114, 89, 1) 55%,
-                          rgba(150, 114, 89, 0.5) 57%,
-                          transparent 58%,
-                          transparent 73%,
-                          rgba(99, 72, 50, 0.8) 75%,
-                          rgba(99, 72, 50, 0.4) 77%,
-                          transparent 78%,
-                          transparent 88%,
-                          rgba(56, 34, 15, 0.8) 90%,
-                          rgba(56, 34, 15, 0.4) 92%,
-                          transparent 93%,
-                          transparent 100%
-                        )
-                      `,
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(150, 114, 89, 0.3) 30%, rgba(99, 72, 50, 0.4) 50%, rgba(150, 114, 89, 0.3) 70%, transparent 100%)',
                       width: '100%',
-                      animation: 'neuralConnections 1.5s ease-in-out infinite alternate',
-                      filter: 'drop-shadow(0 0 1px rgba(150, 114, 89, 0.5))'
+                      filter: 'blur(1px)',
+                      transitionTimingFunction: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
+                      transitionDelay: '100ms'
                     }}
                   ></div>
 
-                  {/* AI network glow on hover */}
+                  {/* Clean highlight sweep */}
                   <div 
-                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-60 transform -translate-y-0.5"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-600 ease-out opacity-0 group-hover:opacity-100 transform origin-left scale-x-0 group-hover:scale-x-100"
                     style={{ 
-                      background: 'radial-gradient(ellipse at 55% center, rgba(150, 114, 89, 0.4) 20%, rgba(99, 72, 50, 0.3) 40%, transparent 60%)',
+                      background: 'linear-gradient(90deg, transparent 20%, rgba(150, 114, 89, 0.9) 40%, rgba(99, 72, 50, 1) 50%, rgba(150, 114, 89, 0.9) 60%, transparent 80%)',
                       width: '100%',
-                      filter: 'blur(2px)',
-                      animation: 'aiGlow 3s ease-in-out infinite alternate'
-                    }}
-                  ></div>
-
-                  {/* Neural activity signals */}
-                  <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-90"
-                    style={{ 
-                      background: `
-                        radial-gradient(circle at 20% center, rgba(255, 215, 0, 0.8) 0.5px, transparent 1px),
-                        radial-gradient(circle at 40% center, rgba(255, 215, 0, 0.6) 0.5px, transparent 1px),
-                        radial-gradient(circle at 60% center, rgba(255, 215, 0, 1) 0.5px, transparent 1px),
-                        radial-gradient(circle at 80% center, rgba(255, 215, 0, 0.7) 0.5px, transparent 1px)
-                      `,
-                      width: '100%',
-                      animation: 'neuralSignals 1.8s linear infinite',
-                      filter: 'drop-shadow(0 0 2px rgba(255, 215, 0, 0.4))'
+                      transitionTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
+                      transitionDelay: '50ms',
+                      filter: 'brightness(1.1)'
                     }}
                   ></div>
                 </div>
