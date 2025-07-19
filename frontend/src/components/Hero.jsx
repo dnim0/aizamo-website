@@ -88,19 +88,6 @@ const Hero = () => {
 
       <div className="container relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Badge */}
-          <div 
-            className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 fade-in"
-            style={{ 
-              backgroundColor: 'rgba(150, 114, 89, 0.1)', 
-              color: 'var(--medium-brown)',
-              border: '1px solid rgba(150, 114, 89, 0.2)'
-            }}
-          >
-            <Sparkles size={16} className="mr-2" />
-            AI-Powered Business Solutions
-          </div>
-
           {/* Main Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 fade-in-up">
             <span style={{ color: 'var(--darkest-brown)' }}>Scale Your Business</span>
