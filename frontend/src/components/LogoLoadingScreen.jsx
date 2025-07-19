@@ -153,7 +153,7 @@ const LogoLoadingScreen = ({ onComplete }) => {
           animation: 'loadingTextFade 3.5s ease forwards'
         }}
       >
-        Pixels Flowing...
+        Powering Up Workflows...
       </div>
 
       {/* Progress Bar */}
