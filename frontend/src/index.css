@@ -128,3 +128,15 @@ code {
     filter: drop-shadow(0 0 6px rgba(255, 255, 0, 1));
   }
 }
+
+/* Wave motion animation */
+@keyframes waveFlow {
+  0% {
+    background-position: 0% 0%;
+    transform: translateX(-20%);
+  }
+  100% {
+    background-position: 100% 0%;
+    transform: translateX(20%);
+  }
+}
