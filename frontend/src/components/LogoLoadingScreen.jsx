@@ -208,14 +208,26 @@ const LogoLoadingScreen = ({ onComplete }) => {
           transform: translate3d(0, 0, 0);
         }
         
-        @keyframes cleanFadeIn {
+        @keyframes dramaticFadeIn {
           0% { 
             opacity: 0;
-            transform: scale(0.95);
+            transform: scale(0.7) translateY(30px);
+            text-shadow: none;
+          }
+          30% {
+            opacity: 0.4;
+            transform: scale(0.8) translateY(15px);
+            text-shadow: 0 0 10px rgba(150, 114, 89, 0.3);
+          }
+          70% {
+            opacity: 0.8;
+            transform: scale(1.05) translateY(-5px);
+            text-shadow: 0 0 20px rgba(150, 114, 89, 0.6);
           }
           100% { 
             opacity: 1;
-            transform: scale(1);
+            transform: scale(1) translateY(0px);
+            text-shadow: 0 0 15px rgba(150, 114, 89, 0.4);
           }
         }
         
