@@ -277,3 +277,74 @@ code {
     filter: blur(2px);
   }
 }
+
+/* Neural network animations */
+@keyframes neuralPulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes neuralConnections {
+  0% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 1px rgba(150, 114, 89, 0.5));
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 3px rgba(150, 114, 89, 0.8));
+  }
+}
+
+@keyframes aiGlow {
+  0% {
+    opacity: 0.3;
+    filter: blur(2px);
+    transform: translateY(-0.5px) scaleY(0.8);
+  }
+  100% {
+    opacity: 0.8;
+    filter: blur(3px);
+    transform: translateY(-0.5px) scaleY(1.2);
+  }
+}
+
+@keyframes neuralSignals {
+  0% {
+    opacity: 0.3;
+    transform: translateX(-10%);
+    filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.4));
+  }
+  25% {
+    opacity: 0.8;
+    transform: translateX(0%);
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.6));
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(5%);
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.8));
+  }
+  75% {
+    opacity: 0.8;
+    transform: translateX(10%);
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.6));
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateX(15%);
+    filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.4));
+  }
+}
