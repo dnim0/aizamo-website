@@ -62,61 +62,77 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
-                {/* Morphing Gradient - Color-shifting gradient that morphs through your brand colors */}
+                {/* Particle Trail - Underline with trailing particle shadows creating depth and motion */}
                 <div className="absolute bottom-0 left-0 w-full">
-                  {/* Base morphing gradient line - always visible */}
+                  {/* Base particle line - always visible */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, #967259 25%, #634832 50%, #38220f 75%, transparent 100%)',
+                      background: 'linear-gradient(90deg, transparent 0%, #967259 30%, #634832 50%, #967259 70%, transparent 100%)',
                       width: '100%',
                       opacity: '0.6',
-                      animation: 'morphingColors 4s ease-in-out infinite'
+                      filter: 'drop-shadow(0 0 1px rgba(150, 114, 89, 0.3))'
                     }}
                   ></div>
                   
-                  {/* Color morphing animation layer - enhanced on hover */}
+                  {/* Particle trail effects - always visible, enhanced on hover */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-40 group-hover:opacity-100"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, #ece0d1 20%, #dbc1ac 40%, #967259 60%, #634832 80%, transparent 100%)',
+                      background: `
+                        radial-gradient(ellipse at 15% center, rgba(150, 114, 89, 0.8) 1px, transparent 3px),
+                        radial-gradient(ellipse at 25% center, rgba(99, 72, 50, 0.6) 0.5px, transparent 2px),
+                        radial-gradient(ellipse at 35% center, rgba(150, 114, 89, 0.9) 1px, transparent 3px),
+                        radial-gradient(ellipse at 45% center, rgba(99, 72, 50, 0.7) 0.5px, transparent 2px),
+                        radial-gradient(ellipse at 55% center, rgba(150, 114, 89, 0.8) 1px, transparent 3px),
+                        radial-gradient(ellipse at 65% center, rgba(99, 72, 50, 0.6) 0.5px, transparent 2px),
+                        radial-gradient(ellipse at 75% center, rgba(150, 114, 89, 0.9) 1px, transparent 3px),
+                        radial-gradient(ellipse at 85% center, rgba(99, 72, 50, 0.7) 0.5px, transparent 2px)
+                      `,
                       width: '100%',
-                      animation: 'brandColorShift 3s ease-in-out infinite alternate',
-                      filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.4))'
+                      animation: 'particleFloat 3s ease-in-out infinite',
+                      filter: 'blur(0.3px)'
                     }}
                   ></div>
 
-                  {/* Shifting gradient overlay for smooth transitions */}
+                  {/* Motion blur trail on hover */}
+                  <div 
+                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-70 transform -translate-y-0.5"
+                    style={{ 
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(150, 114, 89, 0.2) 20%, rgba(99, 72, 50, 0.4) 50%, rgba(150, 114, 89, 0.2) 80%, transparent 100%)',
+                      width: '100%',
+                      filter: 'blur(2px)',
+                      animation: 'motionBlur 2s ease-in-out infinite alternate'
+                    }}
+                  ></div>
+
+                  {/* Trailing particles with staggered animation */}
                   <div 
                     className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-80"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, #38220f 15%, #634832 30%, #967259 45%, #dbc1ac 60%, #ece0d1 75%, transparent 100%)',
+                      background: `
+                        radial-gradient(circle at 10% center, rgba(150, 114, 89, 0.9) 0.5px, transparent 2px),
+                        radial-gradient(circle at 30% center, rgba(99, 72, 50, 0.7) 0.5px, transparent 2px),
+                        radial-gradient(circle at 50% center, rgba(150, 114, 89, 1) 0.5px, transparent 2px),
+                        radial-gradient(circle at 70% center, rgba(99, 72, 50, 0.8) 0.5px, transparent 2px),
+                        radial-gradient(circle at 90% center, rgba(150, 114, 89, 0.9) 0.5px, transparent 2px)
+                      `,
                       width: '100%',
-                      animation: 'gradientShift 5s linear infinite',
-                      backgroundSize: '200% 100%',
-                      mixBlendMode: 'multiply'
+                      animation: 'particleTrail 1.8s ease-out infinite',
+                      transform: 'translateY(-1px)',
+                      filter: 'drop-shadow(0 1px 2px rgba(150, 114, 89, 0.3))'
                     }}
                   ></div>
 
-                  {/* Warm glow effect on hover */}
+                  {/* Shadow depth effect */}
                   <div 
-                    className="absolute bottom-0 left-0 h-1 transition-all duration-500 opacity-0 group-hover:opacity-60 transform -translate-y-0.5"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-50"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, rgba(236, 224, 209, 0.4) 20%, rgba(219, 193, 172, 0.5) 40%, rgba(150, 114, 89, 0.6) 60%, rgba(99, 72, 50, 0.4) 80%, transparent 100%)',
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(56, 34, 15, 0.6) 30%, rgba(99, 72, 50, 0.8) 50%, rgba(56, 34, 15, 0.6) 70%, transparent 100%)',
                       width: '100%',
+                      transform: 'translateY(1px)',
                       filter: 'blur(1px)',
-                      animation: 'warmGlow 2s ease-in-out infinite alternate'
-                    }}
-                  ></div>
-
-                  {/* Color cycling highlight */}
-                  <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-90"
-                    style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, var(--current-brand-color, #967259) 50%, transparent 100%)',
-                      width: '100%',
-                      animation: 'colorCycle 2.5s ease-in-out infinite',
-                      filter: 'brightness(1.2)'
+                      animation: 'shadowDepth 2.5s ease-in-out infinite alternate'
                     }}
                   ></div>
                 </div>
