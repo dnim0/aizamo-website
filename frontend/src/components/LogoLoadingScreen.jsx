@@ -178,9 +178,31 @@ const LogoLoadingScreen = ({ onComplete }) => {
           opacity: 0;
         }
         
-        @keyframes logoFadeIn {
-          0% { opacity: 0; transform: scale(0.8); }
-          100% { opacity: 1; transform: scale(1); }
+        @keyframes coolLogoEntrance {
+          0% { 
+            opacity: 0; 
+            transform: scale(0.3) translateY(30px) rotateX(90deg); 
+            filter: blur(8px) brightness(0.5);
+            text-shadow: 0 0 0px rgba(150, 114, 89, 0);
+          }
+          30% {
+            opacity: 0.8;
+            transform: scale(1.1) translateY(-10px) rotateX(15deg);
+            filter: blur(2px) brightness(1.3);
+            text-shadow: 0 0 15px rgba(150, 114, 89, 0.6);
+          }
+          70% {
+            opacity: 1;
+            transform: scale(0.95) translateY(5px) rotateX(-5deg);
+            filter: blur(0px) brightness(1.1);
+            text-shadow: 0 0 25px rgba(150, 114, 89, 0.8);
+          }
+          100% { 
+            opacity: 1; 
+            transform: scale(1) translateY(0px) rotateX(0deg); 
+            filter: blur(0px) brightness(1);
+            text-shadow: 0 0 20px rgba(150, 114, 89, 0.4);
+          }
         }
         
         @keyframes loadingTextFade {
