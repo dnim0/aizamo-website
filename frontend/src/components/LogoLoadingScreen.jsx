@@ -161,7 +161,7 @@ const LogoLoadingScreen = ({ onComplete }) => {
         style={{ 
           color: '#38220f',
           opacity: 0,
-          animation: 'coolLogoEntrance 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.5s forwards'
+          animation: 'techLogoConstruction 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.5s forwards'
         }}
       >
         AIzamo
