@@ -312,9 +312,18 @@ p {
   background: rgba(99, 72, 50, 0.9);
   color: var(--white);
   transform: translateY(-3px) scale(1.02);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(236, 224, 209, 0.8);
   box-shadow: 0 12px 35px rgba(99, 72, 50, 0.3);
   backdrop-filter: blur(20px);
+}
+
+.btn-secondary-dark:hover::before {
+  opacity: 1;
+  background-position: 100% 100%;
+  box-shadow: 
+    0 0 20px rgba(236, 224, 209, 0.6),
+    0 0 40px rgba(236, 224, 209, 0.4),
+    inset 0 0 20px rgba(236, 224, 209, 0.1);
 }
 
 .btn-secondary-dark:hover::after {
