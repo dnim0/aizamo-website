@@ -54,6 +54,13 @@ const Hero = () => {
         index++;
       } else {
         clearInterval(timer);
+        // Trigger stats animation after typewriter completes
+        setTimeout(() => {
+          setStatsAnimated(true);
+          setHoursStart(true);
+          setTimeout(() => setConversionStart(true), 200);
+          setTimeout(() => setRoiStart(true), 400);
+        }, 500); // Small delay after typewriter finishes
       }
     }, 30); // 30ms per character for smooth typing
 
