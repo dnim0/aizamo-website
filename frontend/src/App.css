@@ -265,9 +265,33 @@ p {
 .btn-secondary-dark {
   background: rgba(99, 72, 50, 0.1);
   color: var(--dark-brown);
-  border: 2px solid rgba(99, 72, 50, 0.5);
+  border: 2px solid rgba(236, 224, 209, 0.3);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(99, 72, 50, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary-dark::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #ece0d1 0%, 
+    #dbc1ac 25%, 
+    #ece0d1 50%, 
+    #dbc1ac 75%, 
+    #ece0d1 100%
+  );
+  background-size: 300% 300%;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: gradientShift 3s ease-in-out infinite reverse;
 }
 
 .btn-secondary-dark::after {
