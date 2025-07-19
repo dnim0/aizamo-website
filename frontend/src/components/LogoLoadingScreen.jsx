@@ -179,16 +179,20 @@ const LogoLoadingScreen = ({ onComplete }) => {
         Powering Up Workflows...
       </div>
 
-      {/* Progress Bar */}
+      {/* Optimized Progress Bar */}
       <div 
         className="absolute bottom-12 left-1/2 transform -translate-x-1/2 w-64 h-1 bg-black bg-opacity-20 rounded-full overflow-hidden"
       >
         <div 
-          className="h-full rounded-full"
+          className="h-full rounded-full relative"
           style={{ 
             background: 'linear-gradient(90deg, #967259, #634832)',
-            width: '0%',
-            animation: 'progressFill 4s ease forwards'
+            width: '100%',
+            transform: 'scaleX(0)',
+            transformOrigin: 'left center',
+            animation: 'optimizedProgressFill 4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards',
+            willChange: 'transform',
+            backfaceVisibility: 'hidden'
           }}
         ></div>
       </div>
