@@ -6,6 +6,7 @@ const Hero = () => {
   const [statsAnimated, setStatsAnimated] = useState(false);
   const [typewriterText, setTypewriterText] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+  const [typewriterComplete, setTypewriterComplete] = useState(false);
 
   const fullText = "Transform your small business with intelligent AI solutions. From automated workflows to lead conversion optimization, we help you save time and increase revenue.";
   
