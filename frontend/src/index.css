@@ -140,3 +140,80 @@ code {
     transform: translateX(20%);
   }
 }
+
+/* Morphing gradient animations */
+@keyframes morphingColors {
+  0% {
+    background: linear-gradient(90deg, transparent 0%, #967259 25%, #634832 50%, #38220f 75%, transparent 100%);
+  }
+  25% {
+    background: linear-gradient(90deg, transparent 0%, #634832 25%, #38220f 50%, #967259 75%, transparent 100%);
+  }
+  50% {
+    background: linear-gradient(90deg, transparent 0%, #38220f 25%, #967259 50%, #634832 75%, transparent 100%);
+  }
+  75% {
+    background: linear-gradient(90deg, transparent 0%, #dbc1ac 25%, #967259 50%, #634832 75%, transparent 100%);
+  }
+  100% {
+    background: linear-gradient(90deg, transparent 0%, #967259 25%, #634832 50%, #38220f 75%, transparent 100%);
+  }
+}
+
+@keyframes brandColorShift {
+  0% {
+    background: linear-gradient(90deg, transparent 0%, #ece0d1 20%, #dbc1ac 40%, #967259 60%, #634832 80%, transparent 100%);
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  50% {
+    background: linear-gradient(90deg, transparent 0%, #dbc1ac 20%, #967259 40%, #634832 60%, #38220f 80%, transparent 100%);
+    filter: hue-rotate(10deg) saturate(1.1);
+  }
+  100% {
+    background: linear-gradient(90deg, transparent 0%, #967259 20%, #634832 40%, #38220f 60%, #967259 80%, transparent 100%);
+    filter: hue-rotate(0deg) saturate(1);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes warmGlow {
+  0% {
+    opacity: 0.4;
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 0.8;
+    filter: blur(2px);
+  }
+}
+
+@keyframes colorCycle {
+  0% {
+    --current-brand-color: #967259;
+    opacity: 0.5;
+  }
+  25% {
+    --current-brand-color: #634832;
+    opacity: 0.8;
+  }
+  50% {
+    --current-brand-color: #38220f;
+    opacity: 1;
+  }
+  75% {
+    --current-brand-color: #dbc1ac;
+    opacity: 0.8;
+  }
+  100% {
+    --current-brand-color: #ece0d1;
+    opacity: 0.5;
+  }
+}
