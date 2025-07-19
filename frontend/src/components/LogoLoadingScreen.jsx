@@ -165,7 +165,7 @@ const LogoLoadingScreen = ({ onComplete }) => {
           style={{ 
             background: 'linear-gradient(90deg, #967259, #634832)',
             width: '0%',
-            animation: 'progressFill 5s ease forwards'
+            animation: 'progressFill 4s ease forwards'
           }}
         ></div>
       </div>
