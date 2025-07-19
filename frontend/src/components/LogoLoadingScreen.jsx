@@ -257,6 +257,37 @@ const LogoLoadingScreen = ({ onComplete }) => {
             transform: scale(1);
           }
         }
+
+        @keyframes baseLineReveal {
+          0% { 
+            opacity: 0;
+          }
+          100% { 
+            opacity: 0.5;
+          }
+        }
+
+        @keyframes classicSweepIntro {
+          0% { 
+            transform: scaleX(0);
+            opacity: 0.8;
+          }
+          100% { 
+            transform: scaleX(1);
+            opacity: 0.8;
+          }
+        }
+
+        @keyframes glowSweepIntro {
+          0% { 
+            transform: translateY(-2px) scaleX(0);
+            opacity: 0;
+          }
+          100% { 
+            transform: translateY(-2px) scaleX(1);
+            opacity: 0.6;
+          }
+        }
         
         @keyframes optimizedProgressFill {
           0% { 
