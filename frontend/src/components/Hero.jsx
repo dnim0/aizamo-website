@@ -213,14 +213,20 @@ const Hero = () => {
               
               {/* Stylish Dividing Line */}
               <div className="flex items-center my-4 w-full max-w-md">
-                <div className="flex-grow h-px bg-gradient-to-r from-transparent via-medium-brown to-transparent opacity-40"></div>
+                <div 
+                  className="flex-grow h-px opacity-40"
+                  style={{ background: 'linear-gradient(to right, transparent, var(--medium-brown), transparent)' }}
+                ></div>
                 <div className="px-4">
                   <div 
                     className="w-2 h-2 rounded-full"
                     style={{ background: 'var(--medium-brown)' }}
                   ></div>
                 </div>
-                <div className="flex-grow h-px bg-gradient-to-r from-medium-brown via-medium-brown to-transparent opacity-40"></div>
+                <div 
+                  className="flex-grow h-px opacity-40"
+                  style={{ background: 'linear-gradient(to right, var(--medium-brown), var(--medium-brown), transparent)' }}
+                ></div>
               </div>
               
               <span style={{ color: 'var(--medium-brown)' }}>Scale the Extraordinary</span>
