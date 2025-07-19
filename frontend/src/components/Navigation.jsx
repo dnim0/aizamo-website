@@ -49,62 +49,41 @@ const Navigation = () => {
 
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - Concept 4: Circuit Integration */}
+          {/* Logo - Concept 5: Premium Badge */}
           <div className="flex-shrink-0 group">
             <div className="flex items-center cursor-pointer relative" onClick={() => scrollToSection('hero')}>
-              <h2 
-                className="text-3xl font-bold transition-all duration-300 hover:opacity-80 relative"
-                style={{ color: 'var(--darkest-brown)' }}
-              >
-                AIzamo
-                {/* Circuit dots */}
-                <div className="absolute inset-0 pointer-events-none">
-                  <div 
-                    className="absolute w-1 h-1 rounded-full circuit-dot opacity-60"
-                    style={{ 
-                      backgroundColor: '#967259',
-                      top: '20%',
-                      left: '-15px',
-                      animation: 'pulse 2s infinite'
-                    }}
-                  ></div>
-                  <div 
-                    className="absolute w-1 h-1 rounded-full circuit-dot opacity-60"
-                    style={{ 
-                      backgroundColor: '#967259',
-                      top: '70%',
-                      left: '25%',
-                      animation: 'pulse 2s infinite 0.5s'
-                    }}
-                  ></div>
-                  <div 
-                    className="absolute w-1 h-1 rounded-full circuit-dot opacity-60"
-                    style={{ 
-                      backgroundColor: '#967259',
-                      top: '40%',
-                      right: '-15px',
-                      animation: 'pulse 2s infinite 1s'
-                    }}
-                  ></div>
-                  <div 
-                    className="absolute w-1 h-1 rounded-full circuit-dot opacity-60"
-                    style={{ 
-                      backgroundColor: '#967259',
-                      bottom: '25%',
-                      right: '30%',
-                      animation: 'pulse 2s infinite 1.5s'
-                    }}
-                  ></div>
-                </div>
-                {/* Subtle connecting line */}
+              <div className="relative">
+                {/* Glass background */}
                 <div 
-                  className="absolute top-1/2 -left-5 -right-5 h-px opacity-30"
+                  className="absolute inset-x-0 inset-y-0 -mx-3 -my-2 rounded-2xl transition-all duration-300"
                   style={{ 
-                    background: 'linear-gradient(90deg, transparent, #967259, transparent)',
-                    transform: 'translateY(-50%)'
+                    background: 'linear-gradient(45deg, rgba(150, 114, 89, 0.1), rgba(99, 72, 50, 0.1))',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(150, 114, 89, 0.2)'
                   }}
                 ></div>
-              </h2>
+                
+                {/* Logo text */}
+                <h2 
+                  className="text-3xl font-bold transition-all duration-300 hover:opacity-90 relative z-10 px-3 py-2"
+                  style={{ 
+                    color: 'var(--darkest-brown)',
+                    textShadow: '0 2px 4px rgba(150, 114, 89, 0.1)'
+                  }}
+                >
+                  AIzamo
+                </h2>
+                
+                {/* Glowing accent dot */}
+                <div 
+                  className="absolute -top-1 -right-1 w-4 h-4 rounded-full transition-all duration-300 group-hover:scale-125"
+                  style={{ 
+                    background: '#967259',
+                    boxShadow: '0 0 15px rgba(150, 114, 89, 0.5), 0 0 30px rgba(150, 114, 89, 0.3)',
+                    animation: 'pulse 3s infinite'
+                  }}
+                ></div>
+              </div>
             </div>
           </div>
 
