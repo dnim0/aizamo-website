@@ -253,12 +253,13 @@ const Hero = () => {
           >
             <button
               onClick={scrollToContact}
-              className="btn btn-primary text-lg px-8 py-4 flex items-center justify-center gap-3 group enhanced-hover min-w-[180px]"
+              className="btn btn-primary text-lg px-8 py-4 inline-flex items-center justify-center group enhanced-hover"
+              style={{ gap: '8px' }}
             >
-              <span className="whitespace-nowrap">Get Started</span>
+              <span>Get Started</span>
               <ArrowRight 
                 size={20} 
-                className="group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0" 
+                className="group-hover:translate-x-2 transition-transform duration-300" 
               />
             </button>
             <button
