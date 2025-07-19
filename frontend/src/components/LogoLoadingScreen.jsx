@@ -7,7 +7,10 @@ const LogoLoadingScreen = ({ onComplete }) => {
     // Create pixels and start animation
     const container = document.getElementById('pixel-loading-container');
     if (container) {
-      createWavePixelFormation(container);
+      // Small delay to ensure DOM is ready
+      requestAnimationFrame(() => {
+        createWavePixelFormation(container);
+      });
     }
 
     // Complete loading after animation
@@ -16,9 +19,14 @@ const LogoLoadingScreen = ({ onComplete }) => {
       if (onComplete) {
         onComplete();
       }
+      // Cleanup animations after completion
+      setTimeout(cleanupAnimations, 100);
     }, 4000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      cleanupAnimations();
+    };
   }, [onComplete]);
 
   const createWavePixelFormation = (container) => {
