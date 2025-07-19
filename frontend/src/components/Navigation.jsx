@@ -62,50 +62,82 @@ const Navigation = () => {
                 }}
               >
                 AIzamo
-                {/* Circuit Trace - Tech-inspired circuit board trace with inner glow */}
+                {/* Animated Dots - Flowing dotted pattern with continuous animation */}
                 <div className="absolute bottom-0 left-0 w-full">
-                  {/* Main circuit trace line - always visible */}
+                  {/* Base dotted line - always visible */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-600 ease-out"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, #967259 20%, #634832 50%, #967259 80%, transparent 100%)',
-                      width: '100%',
-                      opacity: '0.6',
-                      filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.3))'
-                    }}
-                  ></div>
-                  {/* Circuit nodes/dots - always visible, enhanced on hover */}
-                  <div 
-                    className="absolute bottom-0 left-0 w-full h-0.5 transition-all duration-600 ease-out"
-                    style={{
                       background: `
-                        radial-gradient(circle at 15%, #967259 1px, transparent 1px),
-                        radial-gradient(circle at 35%, #634832 1px, transparent 1px),
-                        radial-gradient(circle at 55%, #967259 1px, transparent 1px),
-                        radial-gradient(circle at 75%, #634832 1px, transparent 1px),
-                        radial-gradient(circle at 90%, #967259 1px, transparent 1px)
+                        repeating-linear-gradient(
+                          90deg,
+                          transparent 0px,
+                          transparent 2px,
+                          #967259 2px,
+                          #967259 4px,
+                          transparent 4px,
+                          transparent 8px,
+                          #634832 8px,
+                          #634832 10px,
+                          transparent 10px,
+                          transparent 14px
+                        )
                       `,
-                      opacity: '0.4'
+                      width: '100%',
+                      opacity: '0.5',
+                      backgroundSize: '20px 100%'
                     }}
                   ></div>
-                  {/* Hover enhancement - inner glow effect */}
+                  
+                  {/* Flowing dots animation - enhanced on hover */}
                   <div 
-                    className="absolute bottom-0 left-0 h-1 transition-all duration-600 ease-out opacity-0 group-hover:opacity-100 transform -translate-y-0.5"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-30 group-hover:opacity-100"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, rgba(150, 114, 89, 0.3) 20%, rgba(99, 72, 50, 0.4) 50%, rgba(150, 114, 89, 0.3) 80%, transparent 100%)',
+                      background: `
+                        repeating-linear-gradient(
+                          90deg,
+                          transparent 0px,
+                          transparent 1px,
+                          #967259 1px,
+                          #967259 3px,
+                          transparent 3px,
+                          transparent 5px,
+                          #ffd700 5px,
+                          #ffd700 7px,
+                          transparent 7px,
+                          transparent 9px,
+                          #634832 9px,
+                          #634832 11px,
+                          transparent 11px,
+                          transparent 15px
+                        )
+                      `,
                       width: '100%',
-                      filter: 'blur(2px)',
-                      animationDelay: '100ms'
+                      backgroundSize: '24px 100%',
+                      animation: 'flowingDots 2s linear infinite',
+                      filter: 'drop-shadow(0 0 2px rgba(150, 114, 89, 0.4))'
                     }}
                   ></div>
-                  {/* Circuit trace bounce effect on hover */}
+
+                  {/* Additional flowing layer for depth */}
                   <div 
-                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-800 ease-out opacity-0 group-hover:opacity-100"
+                    className="absolute bottom-0 left-0 h-0.5 transition-all duration-500 opacity-0 group-hover:opacity-60"
                     style={{ 
-                      background: 'linear-gradient(90deg, transparent 0%, #967259 20%, #ffd700 50%, #967259 80%, transparent 100%)',
+                      background: `
+                        repeating-linear-gradient(
+                          90deg,
+                          transparent 0px,
+                          transparent 3px,
+                          rgba(150, 114, 89, 0.8) 3px,
+                          rgba(150, 114, 89, 0.8) 5px,
+                          transparent 5px,
+                          transparent 10px
+                        )
+                      `,
                       width: '100%',
-                      transitionTimingFunction: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-                      filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.5))'
+                      backgroundSize: '18px 100%',
+                      animation: 'flowingDots 3s linear infinite reverse',
+                      transform: 'translateY(-1px)'
                     }}
                   ></div>
                 </div>
