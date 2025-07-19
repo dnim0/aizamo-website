@@ -8,7 +8,7 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [typewriterComplete, setTypewriterComplete] = useState(false);
 
-  const fullText = "Transform your small business with intelligent AI solutions. From automated workflows to lead conversion optimization, we help you save time and increase revenue.";
+  const fullText = "The future of business is automated. Transform your organization with intelligent systems that work for you. From automated workflows to lead conversion optimization, we have you covered.";
   
   // Animated counter hook
   const useCounter = (end, duration = 2000, start = 0) => {
