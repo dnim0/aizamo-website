@@ -1,14 +1,14 @@
-/* AIzamo Brand Colors */
+/* AIzamo Brand Colors - Updated Palette */
 :root {
-  --cream: #ece0d1;
-  --light-brown: #dbc1ac;
-  --medium-brown: #967259;
-  --dark-brown: #634832;
-  --darkest-brown: #38220f;
+  --cream: #EDE3DB;
+  --light-brown: #EDE3DB;
+  --medium-brown: #947C70;
+  --dark-brown: #402E2A;
+  --darkest-brown: #402E2A;
   --white: #ffffff;
-  --text-primary: #38220f;
-  --text-secondary: #634832;
-  --text-light: #967259;
+  --text-primary: #402E2A;
+  --text-secondary: #402E2A;
+  --text-light: #947C70;
 }
 
 * {
