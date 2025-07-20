@@ -105,9 +105,24 @@ const Services = () => {
 
                 {/* CTA */}
                 <button
-                  onClick={scrollToContact}
-                  className="flex items-center text-base font-semibold group-hover:translate-x-1 transition-transform duration-300"
-                  style={{ color: 'var(--medium-brown)' }}
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent card click when clicking button directly
+                    scrollToContact();
+                  }}
+                  className="inline-flex items-center px-4 py-2 rounded-lg font-semibold border-2 transition-all duration-300 hover:shadow-md"
+                  style={{ 
+                    color: 'var(--medium-brown)',
+                    borderColor: 'var(--medium-brown)',
+                    backgroundColor: 'transparent'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--medium-brown)';
+                    e.currentTarget.style.color = 'white';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.color = 'var(--medium-brown)';
+                  }}
                 >
                   Learn More
                   <ArrowRight size={16} className="ml-2" />
