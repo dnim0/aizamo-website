@@ -36,8 +36,7 @@ const Services = () => {
             className="text-xl max-w-3xl mx-auto"
             style={{ color: 'var(--text-secondary)' }}
           >
-            Comprehensive AI solutions designed to transform your business operations 
-            and drive measurable growth.
+            Custom and comprehensive AI solutions designed to simplify workflows, enhance performance, and scale your impact.
           </p>
         </div>
 
