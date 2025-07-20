@@ -144,19 +144,19 @@ code {
 /* Morphing gradient animations */
 @keyframes morphingColors {
   0% {
-    background: linear-gradient(90deg, transparent 0%, #967259 25%, #634832 50%, #38220f 75%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #947C70 25%, #402E2A 50%, #947C70 75%, transparent 100%);
   }
   25% {
-    background: linear-gradient(90deg, transparent 0%, #634832 25%, #38220f 50%, #967259 75%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #402E2A 25%, #947C70 50%, #402E2A 75%, transparent 100%);
   }
   50% {
-    background: linear-gradient(90deg, transparent 0%, #38220f 25%, #967259 50%, #634832 75%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #947C70 25%, #402E2A 50%, #947C70 75%, transparent 100%);
   }
   75% {
-    background: linear-gradient(90deg, transparent 0%, #dbc1ac 25%, #967259 50%, #634832 75%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #EDE3DB 25%, #947C70 50%, #402E2A 75%, transparent 100%);
   }
   100% {
-    background: linear-gradient(90deg, transparent 0%, #967259 25%, #634832 50%, #38220f 75%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #947C70 25%, #402E2A 50%, #947C70 75%, transparent 100%);
   }
 }
 
