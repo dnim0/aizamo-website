@@ -166,11 +166,11 @@ p {
   right: -2px;
   bottom: -2px;
   background: linear-gradient(45deg, 
-    #ece0d1 0%, 
-    #dbc1ac 25%, 
-    #ece0d1 50%, 
-    #dbc1ac 75%, 
-    #ece0d1 100%
+    #EDE3DB 0%, 
+    #947C70 25%, 
+    #EDE3DB 50%, 
+    #947C70 75%, 
+    #EDE3DB 100%
   );
   background-size: 300% 300%;
   border-radius: 10px;
