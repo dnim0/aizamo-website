@@ -66,7 +66,7 @@ const About = () => {
                 className="text-3xl font-bold mb-6"
                 style={{ color: 'var(--darkest-brown)' }}
               >
-                Your Story, Your Way
+                Where my journey meets yours
               </h3>
               <div 
                 className="p-6 rounded-xl border-2 border-dashed"
