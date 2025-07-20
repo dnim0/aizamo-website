@@ -121,37 +121,6 @@ const Roadmap = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div 
-          className="text-center mt-16 p-8 rounded-2xl"
-          style={{ backgroundColor: 'var(--cream)' }}
-        >
-          <h3 
-            className="text-3xl font-bold mb-4"
-            style={{ color: 'var(--darkest-brown)' }}
-          >
-            Ready to Start Your AI Journey?
-          </h3>
-          <p 
-            className="text-xl mb-8 max-w-2xl mx-auto"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            Let's discuss your specific needs and create a custom roadmap for your business transformation.
-          </p>
-          <button
-            onClick={scrollToContact}
-            className="btn btn-primary text-lg px-8 py-4 mr-4"
-          >
-            Get Started Today
-          </button>
-          <button
-            onClick={scrollToContact}
-            className="btn btn-secondary text-lg px-8 py-4"
-          >
-            Schedule Free Consultation
-          </button>
-        </div>
-
         {/* Process Benefits */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           <div className="text-center">
