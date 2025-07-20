@@ -49,24 +49,38 @@ const Hero = () => {
     if (!isVisible) return;
     
     let index = 0;
-    const timer = setInterval(() => {
-      if (index < fullText.length) {
-        setTypewriterText(fullText.slice(0, index + 1));
-        index++;
-      } else {
-        clearInterval(timer);
-        setTypewriterComplete(true); // Mark typewriter as complete
-        // Trigger stats animation after typewriter completes
-        setTimeout(() => {
-          setStatsAnimated(true);
-          setHoursStart(true);
-          setTimeout(() => setConversionStart(true), 200);
-          setTimeout(() => setRoiStart(true), 400);
-        }, 500); // Small delay after typewriter finishes
+    let animationFrame;
+    let lastTime = 0;
+    const typingSpeed = 30; // Reduced from 50ms for smoother typing
+    
+    const typeNextCharacter = (currentTime) => {
+      if (currentTime - lastTime >= typingSpeed) {
+        if (index < fullText.length) {
+          setTypewriterText(fullText.slice(0, index + 1));
+          index++;
+          lastTime = currentTime;
+        } else {
+          setTypewriterComplete(true); // Mark typewriter as complete
+          // Trigger stats animation after typewriter completes
+          setTimeout(() => {
+            setStatsAnimated(true);
+            setHoursStart(true);
+            setTimeout(() => setConversionStart(true), 200);
+            setTimeout(() => setRoiStart(true), 400);
+          }, 500); // Small delay after typewriter finishes
+          return; // Stop the animation loop
+        }
       }
-    }, 50); // 50ms per character for slower, more readable typing
+      animationFrame = requestAnimationFrame(typeNextCharacter);
+    };
+    
+    animationFrame = requestAnimationFrame(typeNextCharacter);
 
-    return () => clearInterval(timer);
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
   }, [isVisible]);
 
   // Enhanced particle system
