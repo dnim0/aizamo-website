@@ -26,7 +26,7 @@ export const mockData = {
     {
       id: 4,
       title: "Lead Conversion",
-      description: "Turn prospects into customers with intelligent lead nurturing and conversion optimization systems.",
+      description: "Engage, qualify, and convert leads with intelligent systems tailored to your customer journey.",
       icon: "Users",
       features: ["Lead Scoring", "Nurture Sequences", "Conversion Tracking", "Sales Funnel Optimization"]
     }
