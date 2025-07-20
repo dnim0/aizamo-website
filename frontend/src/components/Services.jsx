@@ -53,6 +53,7 @@ const Services = () => {
                   borderColor: 'var(--light-brown)',
                   animationDelay: `${index * 0.1}s`
                 }}
+                onClick={scrollToContact}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-5px)';
                   e.currentTarget.style.borderColor = 'var(--medium-brown)';
