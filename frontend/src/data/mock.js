@@ -5,9 +5,9 @@ export const mockData = {
     {
       id: 1,
       title: "AI Automations",
-      description: "Streamline your business processes with intelligent automation solutions that save time and reduce errors.",
+      description: "End-to-end automation solutions tailored to help you work faster, serve better, and grow stronger.",
       icon: "Bot",
-      features: ["Workflow Automation", "Data Processing", "Task Scheduling", "Smart Routing"]
+      features: ["Workflow Automation", "Task Scheduling", "CRM Optimization", "Automated Messaging Pipelines"]
     },
     {
       id: 2,
