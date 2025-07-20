@@ -162,15 +162,15 @@ code {
 
 @keyframes brandColorShift {
   0% {
-    background: linear-gradient(90deg, transparent 0%, #ece0d1 20%, #dbc1ac 40%, #967259 60%, #634832 80%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #EDE3DB 20%, #947C70 40%, #402E2A 60%, #947C70 80%, transparent 100%);
     filter: hue-rotate(0deg) saturate(1);
   }
   50% {
-    background: linear-gradient(90deg, transparent 0%, #dbc1ac 20%, #967259 40%, #634832 60%, #38220f 80%, transparent 100%);
-    filter: hue-rotate(10deg) saturate(1.1);
+    background: linear-gradient(90deg, transparent 0%, #947C70 20%, #402E2A 40%, #947C70 60%, #EDE3DB 80%, transparent 100%);
+    filter: hue-rotate(5deg) saturate(1.1);
   }
   100% {
-    background: linear-gradient(90deg, transparent 0%, #967259 20%, #634832 40%, #38220f 60%, #967259 80%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #402E2A 20%, #947C70 40%, #EDE3DB 60%, #947C70 80%, transparent 100%);
     filter: hue-rotate(0deg) saturate(1);
   }
 }
