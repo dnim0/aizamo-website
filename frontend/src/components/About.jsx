@@ -79,15 +79,13 @@ const About = () => {
                   className="text-lg italic"
                   style={{ color: 'var(--text-light)' }}
                 >
-                  "This section is ready for your personal story and background. 
-                  Share your expertise, experience, and what drives your passion 
-                  for helping businesses succeed with AI automation."
+                  "I've seen the inside of small businesses where everything feels like chaos—manual tasks, unclear systems, too much to manage. That's where I started. Inspired by the potential of AI to fix these very issues, I launched AIzamo. Now, I work with business owners across industries and regions to replace chaos with clarity—using smart automation to make day-to-day work faster, simpler, and more scalable."
                 </p>
                 <p 
                   className="text-sm mt-4 font-medium"
                   style={{ color: 'var(--medium-brown)' }}
                 >
-                  - Content to be added by you
+                  - Daneel Nizamov, Creator and Founder
                 </p>
               </div>
             </div>
