@@ -198,8 +198,8 @@ p {
   background: var(--medium-brown);
   color: var(--darkest-brown);
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(150, 114, 89, 0.4);
-  border: 2px solid rgba(236, 224, 209, 0.8);
+  box-shadow: 0 12px 35px rgba(148, 124, 112, 0.4);
+  border: 2px solid rgba(237, 227, 219, 0.8);
   backdrop-filter: blur(20px);
 }
 
@@ -207,9 +207,9 @@ p {
   opacity: 1;
   background-position: 100% 100%;
   box-shadow: 
-    0 0 20px rgba(236, 224, 209, 0.6),
-    0 0 40px rgba(236, 224, 209, 0.4),
-    inset 0 0 20px rgba(236, 224, 209, 0.1);
+    0 0 20px rgba(237, 227, 219, 0.6),
+    0 0 40px rgba(237, 227, 219, 0.4),
+    inset 0 0 20px rgba(237, 227, 219, 0.1);
 }
 
 .btn-primary:hover::after {
