@@ -141,21 +141,28 @@ const Services = () => {
             className="text-2xl font-bold mb-4"
             style={{ color: 'var(--darkest-brown)' }}
           >
-            Ready to Transform Your Business?
+            Ready to Start Your AI Journey?
           </h3>
           <p 
             className="text-lg mb-6 max-w-2xl mx-auto"
             style={{ color: 'var(--text-secondary)' }}
           >
-            Let's discuss how our AI solutions can streamline your operations 
-            and boost your bottom line.
+            Discover how custom automation can work for you—let's build your transformation plan together.
           </p>
-          <button
-            onClick={scrollToContact}
-            className="btn btn-primary text-lg px-8 py-4"
-          >
-            Start Your AI Journey
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
+              onClick={scrollToContact}
+              className="btn btn-primary text-lg px-8 py-4"
+            >
+              Start Your AI Journey
+            </button>
+            <button
+              onClick={scrollToContact}
+              className="btn btn-secondary-dark text-lg px-8 py-4 enhanced-hover"
+            >
+              Schedule Your Free Consultation
+            </button>
+          </div>
         </div>
       </div>
     </section>
