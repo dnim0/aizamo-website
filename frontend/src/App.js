@@ -29,8 +29,8 @@ function App() {
           <Services />
           <About />
           <Testimonials />
-          <Contact />
           <Roadmap />
+          <Contact />
           <Footer />
         </BrowserRouter>
       )}
