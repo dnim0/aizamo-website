@@ -152,8 +152,8 @@ p {
 .btn-primary {
   background: var(--medium-brown);
   color: var(--white);
-  border: 2px solid rgba(236, 224, 209, 0.3);
-  box-shadow: 0 4px 15px rgba(150, 114, 89, 0.2);
+  border: 2px solid rgba(237, 227, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(148, 124, 112, 0.2);
   position: relative;
   overflow: hidden;
 }
