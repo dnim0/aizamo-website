@@ -264,11 +264,11 @@ p {
 }
 
 .btn-secondary-dark {
-  background: rgba(99, 72, 50, 0.1);
+  background: rgba(64, 46, 42, 0.1);
   color: var(--dark-brown);
-  border: 2px solid rgba(236, 224, 209, 0.3);
+  border: 2px solid rgba(237, 227, 219, 0.3);
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(99, 72, 50, 0.1);
+  box-shadow: 0 4px 15px rgba(64, 46, 42, 0.1);
   position: relative;
   overflow: hidden;
 }
