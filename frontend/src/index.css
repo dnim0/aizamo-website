@@ -348,3 +348,48 @@ code {
     filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.4));
   }
 }
+
+/* Section Header Underline Animation - Classic Sweep Style */
+.section-header-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.section-header-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #967259 30%, #634832 50%, #967259 70%, transparent 100%);
+  opacity: 0.5;
+  transition: all 0.7s ease-out;
+}
+
+.section-header-underline::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 10%, #967259 30%, #634832 50%, #967259 70%, transparent 90%);
+  opacity: 0.8;
+  transform: scaleX(0.4);
+  transform-origin: center;
+  transition: all 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+  filter: drop-shadow(0 0 2px rgba(150, 114, 89, 0.3));
+}
+
+/* Animation on page load */
+.section-header-underline.animate-in::before {
+  transform: scaleX(1);
+}
+
+/* Enhanced glow effect */
+.section-header-underline::after {
+  background: linear-gradient(90deg, transparent 20%, rgba(150, 114, 89, 0.9) 40%, rgba(99, 72, 50, 1) 50%, rgba(150, 114, 89, 0.9) 60%, transparent 80%);
+  opacity: 1;
+  filter: brightness(1.1);
+}
