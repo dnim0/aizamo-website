@@ -21,7 +21,7 @@ export const mockData = {
       title: "Ad Optimization",
       description: "Maximize your advertising ROI with AI tools that prioritize efficiency and conversion.",
       icon: "Target",
-      features: ["AI Optimized Campaign setup & tracking", "ROI reporting & insights", "Google & Meta Ads Management", "Email Advertisement Integration"]
+      features: ["AI Optimized Campaign Setup & Tracking", "ROI Reporting & Insights", "Google & Meta Ads Management", "Email Ad Integration"]
     },
     {
       id: 4,
