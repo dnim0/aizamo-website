@@ -197,23 +197,23 @@ code {
 
 @keyframes colorCycle {
   0% {
-    --current-brand-color: #967259;
+    --current-brand-color: #947C70;
     opacity: 0.5;
   }
   25% {
-    --current-brand-color: #634832;
+    --current-brand-color: #402E2A;
     opacity: 0.8;
   }
   50% {
-    --current-brand-color: #38220f;
+    --current-brand-color: #947C70;
     opacity: 1;
   }
   75% {
-    --current-brand-color: #dbc1ac;
+    --current-brand-color: #EDE3DB;
     opacity: 0.8;
   }
   100% {
-    --current-brand-color: #ece0d1;
+    --current-brand-color: #947C70;
     opacity: 0.5;
   }
 }
