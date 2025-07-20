@@ -64,7 +64,7 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-4xl md:text-5xl font-bold mb-6 section-header-underline animate-in"
             style={{ color: 'var(--darkest-brown)' }}
           >
             Let's Get Started
