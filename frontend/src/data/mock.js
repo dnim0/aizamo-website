@@ -12,9 +12,9 @@ export const mockData = {
     {
       id: 2,
       title: "Website Management + SEO",
-      description: "Professional website development and optimization to boost your online presence and search rankings.",
+      description: "Professional website development and optimization to boost visibility, lead conversions, and long-term growth.",
       icon: "Globe",
-      features: ["Custom Development", "SEO Optimization", "Performance Monitoring", "Content Management"]
+      features: ["Custom Website Development", "Tailored SEO Designs", "Content Management", "Performance Monitoring"]
     },
     {
       id: 3,
