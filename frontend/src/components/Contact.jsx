@@ -28,25 +28,50 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitMessage('');
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitMessage('Thank you! We\'ll get back to you within 24 hours.');
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        company: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
+    try {
+      const backendUrl = import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL;
       
-      // Clear message after 5 seconds
+      const response = await fetch(`${backendUrl}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setIsSubmitting(false);
+        setSubmitMessage('Thank you! We\'ll get back to you within 12 hours.');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+        
+        // Clear message after 8 seconds
+        setTimeout(() => {
+          setSubmitMessage('');
+        }, 8000);
+      } else {
+        throw new Error(data.detail || 'Failed to submit form');
+      }
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setIsSubmitting(false);
+      setSubmitMessage(`Error: ${error.message}. Please try again or contact us directly at hello@aizamo.com`);
+      
+      // Clear error message after 10 seconds
       setTimeout(() => {
         setSubmitMessage('');
-      }, 5000);
-    }, 2000);
+      }, 10000);
+    }
   };
 
   const scheduleCall = () => {
