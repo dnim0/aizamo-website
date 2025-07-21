@@ -268,15 +268,15 @@ const Contact = () => {
                 className="w-full btn btn-primary text-lg py-4 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
-                  <>
+                  <div className="flex items-center">
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
                     <span className="ml-2">Sending...</span>
-                  </>
+                  </div>
                 ) : (
-                  <>
+                  <div className="flex items-center">
                     <span>Send Message</span>
                     <Send size={20} className="ml-1" />
-                  </>
+                  </div>
                 )}
               </button>
             </form>
