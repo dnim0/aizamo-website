@@ -32,40 +32,21 @@ const About = () => {
           {/* Professional Headshot */}
           <div className="order-2 lg:order-1">
             <div 
-              className="aspect-square rounded-2xl border-4 overflow-hidden"
+              className="aspect-square rounded-2xl border-4 overflow-hidden shadow-lg"
               style={{ 
                 backgroundColor: 'var(--light-brown)',
                 borderColor: 'var(--medium-brown)',
                 minHeight: '400px'
               }}
             >
-              <div 
-                className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center text-center"
+              <img 
+                src={headshotImage}
+                alt="Daneel Nizamov, Creator and Founder of AIzamo"
+                className="w-full h-full object-cover"
                 style={{ 
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3Ctext x='200' y='180' font-family='Arial' font-size='16' fill='%23666' text-anchor='middle'%3EYour Professional%3C/text%3E%3Ctext x='200' y='210' font-family='Arial' font-size='16' fill='%23666' text-anchor='middle'%3EHeadshot Here%3C/text%3E%3Ctext x='200' y='240' font-family='Arial' font-size='12' fill='%23999' text-anchor='middle'%3E(Image will be uploaded)%3C/text%3E%3C/svg%3E")`
+                  objectPosition: 'center center'
                 }}
-              >
-                <div>
-                  <div 
-                    className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center"
-                    style={{ backgroundColor: 'var(--medium-brown)' }}
-                  >
-                    <Users size={48} color="white" />
-                  </div>
-                  <p 
-                    className="text-lg font-medium"
-                    style={{ color: 'var(--text-secondary)' }}
-                  >
-                    Daneel Nizamov
-                  </p>
-                  <p 
-                    className="text-sm mt-2"
-                    style={{ color: 'var(--text-light)' }}
-                  >
-                    Creator and Founder
-                  </p>
-                </div>
-              </div>
+              />
             </div>
           </div>
 
