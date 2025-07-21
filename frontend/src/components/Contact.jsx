@@ -334,7 +334,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center">
                   <MapPin size={20} className="mr-4" style={{ color: 'var(--medium-brown)' }} />
-                  <span style={{ color: 'var(--text-secondary)' }}>Remote & On-site Services</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>Remote Services Globally</span>
                 </div>
               </div>
               
