@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Phone size={18} className="mr-3" style={{ color: 'var(--medium-brown)' }} />
-                <span style={{ color: 'var(--light-brown)' }}>+1 (555) AI-ZAMO</span>
+                <span style={{ color: 'var(--light-brown)' }}>+1 (403) 800-3135</span>
               </div>
               <div className="flex items-center">
                 <MapPin size={18} className="mr-3" style={{ color: 'var(--medium-brown)' }} />
