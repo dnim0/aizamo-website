@@ -330,7 +330,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center">
                   <Phone size={20} className="mr-4" style={{ color: 'var(--medium-brown)' }} />
-                  <span style={{ color: 'var(--text-secondary)' }}>+1 (555) AI-ZAMO</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>+1 (403) 800-3135</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin size={20} className="mr-4" style={{ color: 'var(--medium-brown)' }} />
