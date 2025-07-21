@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Users, Zap } from 'lucide-react';
+import daneelHeadshot from '../assets/images/daneel-headshot.jpg';
 
 const About = () => {
   return (
