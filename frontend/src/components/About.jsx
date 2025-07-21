@@ -2,8 +2,8 @@ import React from 'react';
 import { Award, Users, Zap } from 'lucide-react';
 
 const About = () => {
-  // Your professional headshot (base64 encoded)
-  const headshotImage = `data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAGQAZADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUWEHInGBEzKRobHBCNHwFBUi4QMEcgVygqKyIrLB4QLhQzRyQ+ElVGPCU2MkMxKS3FO0rLFpKhBqSWNr2xFQi8VhTFhNJROhowJBAAAAAElFTkSuQmCC`;
+  // Professional headshot - using a working placeholder until your actual base64 image is provided
+  const headshotImage = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3Ccircle cx='200' cy='160' r='60' fill='%23d1d5db'/%3E%3Cpath d='M120 300 Q120 250 200 250 Q280 250 280 300 L120 300' fill='%23d1d5db'/%3E%3Ctext x='200' y='340' font-family='Arial' font-size='14' fill='%23666' text-anchor='middle'%3EDaneel Nizamov%3C/text%3E%3Ctext x='200' y='360' font-family='Arial' font-size='12' fill='%23999' text-anchor='middle'%3EFounder %26 Creator%3C/text%3E%3C/svg%3E`;
 
   return (
     <section 
