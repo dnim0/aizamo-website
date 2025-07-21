@@ -215,12 +215,49 @@ async def health_check():
         logger.error(f"Health check failed: {str(e)}")
         raise HTTPException(status_code=503, detail="Service unavailable")
 
+async def process_contact_integrations(contact_data: dict):
+    """Process GoHighLevel integration for new contact"""
+    try:
+        # Create contact in GoHighLevel
+        ghl_response = await create_ghl_contact(contact_data)
+        
+        if ghl_response and ghl_response.get('contact'):
+            contact_id = ghl_response['contact']['id']
+            
+            # Create a follow-up task (3 days from now)
+            follow_up_date = (datetime.utcnow() + timedelta(days=3)).strftime('%Y-%m-%d')
+            
+            task_data = {
+                "title": f"Follow up with {contact_data.get('firstName', '')} {contact_data.get('lastName', '')}",
+                "description": f"Follow up on AI automation inquiry. Service interest: {contact_data.get('service', 'N/A')}",
+                "dueDate": follow_up_date,
+                "completed": False
+            }
+            
+            await create_ghl_task(contact_id, task_data)
+            
+            # Optionally trigger a workflow (add workflow ID to env if needed)
+            # workflow_id = os.getenv("GHL_ONBOARDING_WORKFLOW_ID")
+            # if workflow_id:
+            #     await trigger_ghl_workflow(contact_id, workflow_id)
+            
+            logger.info(f"Successfully processed GoHighLevel integration for contact: {contact_id}")
+            return {"ghl_contact_id": contact_id}
+            
+    except GoHighLevelError as e:
+        logger.error(f"GoHighLevel integration failed: {str(e)}")
+        # Don't fail the entire request if GHL integration fails
+        return {"ghl_error": str(e)}
+    except Exception as e:
+        logger.error(f"Unexpected error in GoHighLevel integration: {str(e)}")
+        return {"ghl_error": "Integration failed"}
+
 @api_router.post("/contact", response_model=ContactFormResponse)
 async def submit_contact_form(
     contact_data: ContactFormCreate,
     background_tasks: BackgroundTasks
 ):
-    """Handle contact form submissions"""
+    """Handle contact form submissions with GoHighLevel integration"""
     try:
         # Create contact submission object
         contact_submission = ContactFormSubmission(**contact_data.dict())
@@ -230,6 +267,12 @@ async def submit_contact_form(
         
         if not result.inserted_id:
             raise HTTPException(status_code=500, detail="Failed to save contact submission")
+        
+        # Process GoHighLevel integration in background
+        background_tasks.add_task(
+            process_contact_integrations, 
+            contact_submission.dict()
+        )
         
         # Send email notification in background
         background_tasks.add_task(
