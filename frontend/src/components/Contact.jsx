@@ -245,7 +245,7 @@ const Contact = () => {
                   className="block text-sm font-medium mb-2"
                   style={{ color: 'var(--text-secondary)' }}
                 >
-                  Tell us about your project *
+                  We're listening - Start typing! *
                 </label>
                 <textarea
                   name="message"
