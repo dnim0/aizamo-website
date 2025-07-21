@@ -9,11 +9,12 @@ from pathlib import Path
 from pydantic import BaseModel, Field, EmailStr, validator
 from typing import List, Optional
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta
 import aiosmtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import jinja2
+from gohighlevel import create_ghl_contact, create_ghl_task, trigger_ghl_workflow, GoHighLevelError
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
