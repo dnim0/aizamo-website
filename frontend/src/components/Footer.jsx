@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <MapPin size={18} className="mr-3" style={{ color: 'var(--medium-brown)' }} />
-                <span style={{ color: 'var(--light-brown)' }}>Remote & On-site Services</span>
+                <span style={{ color: 'var(--light-brown)' }}>Remote Services Globally</span>
               </div>
             </div>
           </div>
