@@ -273,10 +273,10 @@ const Contact = () => {
                     <span className="ml-2">Sending...</span>
                   </>
                 ) : (
-                  <div className="flex items-center">
+                  <>
                     <span>Send Message</span>
                     <Send size={20} className="ml-1" />
-                  </div>
+                  </>
                 )}
               </button>
             </form>
