@@ -346,7 +346,7 @@ const Contact = () => {
                   Response Time
                 </h4>
                 <p style={{ color: 'var(--text-secondary)' }}>
-                  We typically respond within 24 hours
+                  We typically respond within 12 hours
                 </p>
               </div>
             </div>
