@@ -27,36 +27,24 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Photo Placeholder */}
+          {/* Professional Headshot */}
           <div className="order-2 lg:order-1">
             <div 
-              className="aspect-square rounded-2xl border-4 flex items-center justify-center text-center"
+              className="aspect-square rounded-2xl border-4 overflow-hidden"
               style={{ 
                 backgroundColor: 'var(--light-brown)',
                 borderColor: 'var(--medium-brown)',
                 minHeight: '400px'
               }}
             >
-              <div>
-                <div 
-                  className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center"
-                  style={{ backgroundColor: 'var(--medium-brown)' }}
-                >
-                  <Users size={48} color="white" />
-                </div>
-                <p 
-                  className="text-lg font-medium"
-                  style={{ color: 'var(--text-secondary)' }}
-                >
-                  Your Photo Will Go Here
-                </p>
-                <p 
-                  className="text-sm mt-2"
-                  style={{ color: 'var(--text-light)' }}
-                >
-                  Professional headshot placeholder
-                </p>
-              </div>
+              <img 
+                src={daneelHeadshot}
+                alt="Daneel Nizamov, Creator and Founder of AIzamo"
+                className="w-full h-full object-cover"
+                style={{ 
+                  objectPosition: 'center top'
+                }}
+              />
             </div>
           </div>
 
