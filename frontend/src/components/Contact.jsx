@@ -258,7 +258,7 @@ const Contact = () => {
                     backgroundColor: 'var(--cream)',
                     borderColor: 'var(--light-brown)'
                   }}
-                  placeholder="Describe your business needs and how AI automation can help..."
+                  placeholder="What challenges are you hoping to solve?"
                 />
               </div>
 
