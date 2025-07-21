@@ -33,17 +33,22 @@ const About = () => {
               style={{ 
                 backgroundColor: 'var(--light-brown)',
                 borderColor: 'var(--medium-brown)',
-                minHeight: '400px'
+                minHeight: '400px',
+                backgroundImage: 'url(/images/daneel-headshot.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center center',
+                backgroundRepeat: 'no-repeat'
               }}
             >
-              <img 
-                src={headshotImage}
-                alt="Daneel Nizamov, Creator and Founder of AIzamo"
-                className="w-full h-full object-cover"
-                style={{ 
-                  objectPosition: 'center center'
-                }}
-              />
+              {/* Fallback content in case image doesn't load */}
+              <div 
+                className="w-full h-full flex items-center justify-center text-center opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-50 text-white"
+              >
+                <div>
+                  <p className="text-lg font-medium">Daneel Nizamov</p>
+                  <p className="text-sm">Creator and Founder</p>
+                </div>
+              </div>
             </div>
           </div>
 
