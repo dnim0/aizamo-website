@@ -401,6 +401,28 @@ async def catch_all(path: str):
         logger.error(f"Error serving path {path}: {str(e)}")
         return {"error": "Server error", "path": path}
 
+# Global exception handler
+@app.exception_handler(Exception)
+async def global_exception_handler(request, exc):
+    logger.error(f"Global exception: {str(exc)}")
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal server error"}
+    )
+
+@app.on_event("startup")
+async def startup_event():
+    """Initialize application on startup"""
+    logger.info("AIzamo API starting up...")
+    
+    # Create database indexes for better performance
+    try:
+        await db.contact_submissions.create_index("email")
+        await db.contact_submissions.create_index("timestamp")
+        logger.info("Database indexes created successfully")
+    except Exception as e:
+        logger.warning(f"Failed to create indexes: {str(e)}")
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
     logger.info("Shutting down AIzamo API...")
