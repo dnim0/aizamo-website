@@ -4,7 +4,7 @@
   "description": "AIzamo AI Agency Website with GoHighLevel Integration", 
   "main": "main.py",
   "scripts": {
-    "build": "echo 'Building React frontend...' && cd frontend && npm install && npm run build && cd .. && echo 'Copying build to root...' && cp -r frontend/build . && ls -la build/ && echo 'Frontend build completed!'",
+    "build": "echo 'Building React frontend...' && cd frontend && npm install --legacy-peer-deps && npm run build && cd .. && echo 'Copying build to root...' && cp -r frontend/build . && ls -la build/ && echo 'Frontend build completed!'",
     "heroku-postbuild": "npm run build",
     "start": "python main.py",
     "dev": "uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
