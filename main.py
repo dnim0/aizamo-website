@@ -324,17 +324,45 @@ async def get_status_checks():
 app.include_router(api_router)
 
 # Serve React app static files
-if os.path.exists("build"):
-    app.mount("/static", StaticFiles(directory="build/static"), name="static")
-    
-    @app.get("/{full_path:path}")
-    async def serve_react_app(full_path: str):
-        """Serve React app for all non-API routes"""
-        if full_path.startswith("api/"):
-            raise HTTPException(status_code=404, detail="API endpoint not found")
-        
-        # Serve index.html for all non-API routes (SPA routing)
+@app.on_event("startup")
+async def setup_static_files():
+    """Setup static file serving after startup"""
+    if os.path.exists("build"):
+        # Mount static files (CSS, JS, images)
+        app.mount("/static", StaticFiles(directory="build/static"), name="static")
+        # Mount images and other assets
+        if os.path.exists("build/images"):
+            app.mount("/images", StaticFiles(directory="build/images"), name="images")
+        logger.info("Static files mounted successfully")
+    else:
+        logger.warning("Build directory not found, static files not mounted")
+
+# Root route to serve React app
+@app.get("/")
+async def serve_root():
+    """Serve React app root"""
+    if os.path.exists("build/index.html"):
         return FileResponse("build/index.html")
+    else:
+        return {"message": "AIzamo API is running", "frontend": "Build not found"}
+
+# Catch-all route for React Router (SPA routing)
+@app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    """Serve React app for all non-API routes"""
+    # Don't catch API routes
+    if full_path.startswith("api"):
+        raise HTTPException(status_code=404, detail="API endpoint not found")
+    
+    # Don't catch static file routes
+    if full_path.startswith("static") or full_path.startswith("images"):
+        raise HTTPException(status_code=404, detail="Static file not found")
+    
+    # For all other routes, serve the React app
+    if os.path.exists("build/index.html"):
+        return FileResponse("build/index.html")
+    else:
+        return {"error": "Frontend build not available", "path": full_path}
 
 # CORS middleware
 app.add_middleware(
