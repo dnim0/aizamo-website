@@ -347,6 +347,33 @@ async def startup_event():
     except Exception as e:
         logger.warning(f"Failed to create indexes: {str(e)}")
 
+# Root route to serve React app
+@app.get("/")
+async def serve_root():
+    """Serve React app root"""
+    if os.path.exists("build/index.html"):
+        return FileResponse("build/index.html")
+    else:
+        return {"message": "AIzamo API is running", "status": "healthy", "frontend": "Build not found"}
+
+# Catch-all route for React Router (SPA routing)
+@app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    """Serve React app for all non-API routes"""
+    # Don't catch API routes
+    if full_path.startswith("api"):
+        raise HTTPException(status_code=404, detail="API endpoint not found")
+    
+    # Don't catch static file routes  
+    if full_path.startswith("static") or full_path.startswith("images"):
+        raise HTTPException(status_code=404, detail="Static file not found")
+    
+    # For all other routes, serve the React app
+    if os.path.exists("build/index.html"):
+        return FileResponse("build/index.html")
+    else:
+        return {"error": "Frontend build not available", "path": full_path, "message": "Please build the frontend first"}
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
     logger.info("Shutting down AIzamo API...")
