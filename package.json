@@ -1,0 +1,31 @@
+{
+  "name": "aizamo-website",
+  "version": "1.0.0",
+  "description": "AIzamo AI Agency Website with GoHighLevel Integration",
+  "main": "main.py",
+  "scripts": {
+    "heroku-prebuild": "echo 'Starting Heroku build process'",
+    "build": "cd frontend && npm install && npm run build && cd .. && cp -r frontend/build .",
+    "postbuild": "echo 'Build completed successfully'",
+    "start": "uvicorn main:app --host 0.0.0.0 --port $PORT",
+    "dev": "uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/aizamo-website.git"
+  },
+  "keywords": [
+    "ai",
+    "agency",
+    "automation",
+    "fastapi",
+    "react",
+    "heroku"
+  ],
+  "author": "AIzamo",
+  "license": "MIT"
+}
