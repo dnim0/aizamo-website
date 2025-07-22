@@ -9,15 +9,17 @@
 - ✅ Python imports working correctly
 - ✅ GoHighLevel integration ready
 
-### **Step 2: Push to GitHub** 
+### **Step 2: Push to GitHub (UPDATED - FIX INCLUDED)** 
 **Run these commands in your terminal:**
 
 ```bash
 cd /path/to/your/aizamo-website
 git add .
-git commit -m "🚀 Heroku deployment ready with GoHighLevel integration"
+git commit -m "🔧 FIXED: Static file serving and routing for Heroku deployment"
 git push origin main
 ```
+
+**⚠️ IMPORTANT:** This update includes fixes for the "Not Found" error that can occur on Heroku.
 
 ### **Step 3: Set Up Required Services**
 
