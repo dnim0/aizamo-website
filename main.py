@@ -323,56 +323,83 @@ async def get_status_checks():
 # Include the API router
 app.include_router(api_router)
 
-# Serve React app static files
-@app.on_event("startup")
-async def startup_event():
-    logger.info("AIzamo API starting up...")
-    
-    # Setup static file serving
-    if os.path.exists("build"):
-        # Mount static files (CSS, JS, images)
+# CORS middleware (must be before static files)
+app.add_middleware(
+    CORSMiddleware,
+    allow_credentials=True,
+    allow_origins=["*"],  # In production, specify exact origins
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Serve static files from build directory
+try:
+    if os.path.exists("build") and os.path.exists("build/static"):
         app.mount("/static", StaticFiles(directory="build/static"), name="static")
-        # Mount images and other assets if they exist
-        if os.path.exists("build/images"):
-            app.mount("/images", StaticFiles(directory="build/images"), name="images")
-        logger.info("Static files mounted successfully")
+        print("✅ Static files mounted successfully")
     else:
-        logger.warning("Build directory not found - static files not mounted")
-    
-    # Create database indexes for better performance
-    try:
-        await db.contact_submissions.create_index("email")
-        await db.contact_submissions.create_index("timestamp")
-        logger.info("Database indexes created successfully")
-    except Exception as e:
-        logger.warning(f"Failed to create indexes: {str(e)}")
+        print("⚠️  Build directory not found")
+except Exception as e:
+    print(f"❌ Error mounting static files: {e}")
 
-# Root route to serve React app
+# Root route
 @app.get("/")
-async def serve_root():
-    """Serve React app root"""
-    if os.path.exists("build/index.html"):
-        return FileResponse("build/index.html")
-    else:
-        return {"message": "AIzamo API is running", "status": "healthy", "frontend": "Build not found"}
+async def root():
+    """Serve React app or API info"""
+    try:
+        if os.path.exists("build/index.html"):
+            return FileResponse("build/index.html")
+        else:
+            return {
+                "message": "AIzamo API is running",
+                "version": "1.0.0",
+                "status": "healthy",
+                "note": "Frontend build not available - run build process"
+            }
+    except Exception as e:
+        logger.error(f"Error serving root: {str(e)}")
+        return {"message": "AIzamo API is running", "error": str(e)}
 
-# Catch-all route for React Router (SPA routing)
-@app.get("/{full_path:path}")
-async def serve_react_app(full_path: str):
-    """Serve React app for all non-API routes"""
-    # Don't catch API routes
-    if full_path.startswith("api"):
+# Health check route (before catch-all)
+@app.get("/health")
+async def direct_health():
+    """Direct health check (not under /api)"""
+    try:
+        await db.command("ismaster")
+        return {
+            "status": "healthy",
+            "database": "connected",
+            "frontend_build": "available" if os.path.exists("build/index.html") else "missing",
+            "timestamp": datetime.utcnow().isoformat()
+        }
+    except Exception as e:
+        return {"status": "unhealthy", "error": str(e)}
+
+# Catch-all route for React SPA
+@app.get("/{path:path}")
+async def catch_all(path: str):
+    """Catch-all route to serve React app for client-side routing"""
+    # Skip API routes
+    if path.startswith("api/") or path == "api":
         raise HTTPException(status_code=404, detail="API endpoint not found")
     
-    # Don't catch static file routes  
-    if full_path.startswith("static") or full_path.startswith("images"):
+    # Skip static routes 
+    if path.startswith("static/"):
         raise HTTPException(status_code=404, detail="Static file not found")
-    
-    # For all other routes, serve the React app
-    if os.path.exists("build/index.html"):
-        return FileResponse("build/index.html")
-    else:
-        return {"error": "Frontend build not available", "path": full_path, "message": "Please build the frontend first"}
+        
+    # Serve React app for all other routes
+    try:
+        if os.path.exists("build/index.html"):
+            return FileResponse("build/index.html")
+        else:
+            return {
+                "error": "Frontend not available",
+                "path": path,
+                "message": "Please run the build process"
+            }
+    except Exception as e:
+        logger.error(f"Error serving path {path}: {str(e)}")
+        return {"error": "Server error", "path": path}
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
