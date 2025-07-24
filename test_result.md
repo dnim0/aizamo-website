@@ -267,3 +267,5 @@ agent_communication:
     message: "Completed full backend implementation with: 1) Contact form API endpoint with comprehensive validation 2) Email notification system with HTML templates 3) MongoDB storage with proper indexing 4) Production-ready configuration 5) Frontend integration with error handling. Ready for backend testing."
   - agent: "testing"
     message: "Completed comprehensive backend testing with 10 test cases. 9/10 tests passed (90% success rate). All critical functionality working: contact form API, validation, database storage, health endpoints. Only minor CORS header visibility issue detected but CORS functionality works properly. Backend is production-ready."
+  - agent: "main"
+    message: "Successfully migrated AIzamo website from Heroku to Emergent platform. Key changes: 1) Created .env file with MONGO_URL for local MongoDB 2) Updated main.py to bind to 0.0.0.0:8001 3) Updated Contact.jsx to use REACT_APP_BACKEND_URL 4) Created supervisord.conf for service management 5) Installed all dependencies. Both backend (port 8001) and frontend (port 3000) are running successfully. API tested and working perfectly."
