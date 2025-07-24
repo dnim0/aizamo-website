@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Professional website for AIzamo AI agency with contact form, testimonials, and backend functionality ready for Digital Ocean App Platform deployment"
+user_problem_statement: "AIzamo AI agency website migration from Heroku to Emergent platform with contact form, testimonials, and backend functionality"
 
 backend:
   - task: "Contact Form API Endpoint"
