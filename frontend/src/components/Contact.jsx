@@ -29,8 +29,9 @@ const Contact = () => {
     setSubmitMessage('');
 
     try {
-      // For Heroku deployment, API is served from same domain with /api prefix
-      const response = await fetch('/api/contact', {
+      // Use environment variable for backend URL on Emergent platform
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || '';
+      const response = await fetch(`${backendUrl}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
